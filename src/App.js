@@ -1,9 +1,13 @@
 import './style/App.css';
-import Footer from './components/layouts/Footer';
+
 import { Card, Metric, Text, Title, BarChart, Subtitle, AreaChart, DonutChart, Flex, BadgeDelta, Badge, BarList, Bold} from "@tremor/react";
 import { Carousel, Typography, IconButton, Chip, Navbar, MobileNav, Button, } from '@material-tailwind/react';
 import { ChevronLeftIcon, ArrowRightIcon, ChevronRightIcon, ArrowUpIcon, ArrowDownIcon } from "@heroicons/react/24/outline";
 import { Icon } from '@tremor/react/dist';
+
+import { Header } from './layouts/Header';
+import Footer from './layouts/Footer';
+
 import cascadeImg from './assets/cascade-recovery.svg';
 import employeePresence from './assets/Employees.svg';
 import greenTeamCard from './assets/SAPGREENTEAMCARDCOLLECTIONV2.png';
@@ -19,7 +23,6 @@ import ecoServiceCard from './assets/eco-action.svg';
 import wasteServiceCard from './assets/wastemanagement.svg';
 import refundServiceCard from './assets/refundables.svg';
 import heroBackground from './assets/SAPVECTORLOGO-COLOR.svg';
-import sapLogo from './assets/sap-logo-svg.svg'
 
 
   //Creating an array for the data to be inputted into the 'Solid Waste Diversion' Card
@@ -37,15 +40,7 @@ import sapLogo from './assets/sap-logo-svg.svg'
   export default () => (
   <div>
 
-    <div className='bg-textmain flex justify-between'>
-      <div>
-        <img src={sapLogo} className='w-36 h-30'/>
-      </div>
-      <div className='mb-4'>
-        <button className='rounded-full w-32 h-10 mt-4 border-4 border-insightBtn bg-white text-insightBtn mr-4'>Home</button>
-        <button className='rounded-full w-32 h-10 mt-4 bg-insightBtn text-white mr-10'>Insights</button>
-      </div>
-    </div>
+    <Header />
 
     <div className='bg-bgmain py-4 flex justify-evenly items-center border-b-[60px] border-textmain'>
       <div className='flex flex-col'>
