@@ -9,6 +9,8 @@ import Header from './layouts/Header';
 import Footer from './layouts/Footer';
 
 import Banner from './components/Banner';
+import OfficePresence from './components/OfficePresence';
+import WasteDiversion from './components/WasteDiversion';
 
 import cascadeImg from './assets/cascade-recovery.svg';
 import employeePresence from './assets/Employees.svg';
@@ -37,48 +39,14 @@ import refundServiceCard from './assets/refundables.svg';
   <div>
 
     <Header />
-
     <Banner />
 
     <div className='flex flex-row items-center justify-evenly m-10'>
       {/* Office Presence Card */}
-
-      <div>
-        <h1 className='text-center mb-2 font-bold text-textmain text-xl'>Office Presence</h1>
-
-        <Card className='bg-bgmain flex items-center gap-x-8 h-[200px]'>
-            <div>
-              <img 
-                width={110}
-                height={80}
-                src={employeePresence}/>
-            </div>
-            <div>
-              <h1 className='text-xl text-indigo-600 font-bold mb-4'>May</h1>
-              <div className='w-40 h-14 rounded-full bg-pillBgGreen text-center flex flex-row items-center justify-evenly'>
-                <ArrowUpIcon className='text-white stroke-[4px] w-6 h-6'/>
-                <p className='text-white font-bold text-2xl'>50.1%</p>
-              </div>
-              <div className='mt-4'>
-                <p className='text-sm'>*Based on the month-over-month <br/>analysis of office presence.</p>
-              </div>
-            </div>
-        </Card>
-      </div>
+      <OfficePresence />
       
       {/* Waste Diversion Section */}
-      <div className='w-[500px]'>
-        <div className='text-center'>
-          <h1 className='mb-2 text-center font-bold text-textmain text-xl'>Solid Waste Diversion</h1>
-        </div>
-        <Card className="w-full bg-bgmain">
-          <div className="flex flex-row justify-between">
-            <h1 className='text-xl text-indigo-600 font-bold mb-4'>May</h1>  
-            <h2 className='text-xl text-indigo-600 font-bold mb-4'>Total (%)</h2>
-          </div>
-          <BarList data={recycling} className="p-3" />
-        </Card>
-      </div>
+      <WasteDiversion />
     </div>
 
 
