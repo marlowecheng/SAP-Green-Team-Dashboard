@@ -16,7 +16,6 @@ import greenTeamCard from './assets/SAPGREENTEAMCARDCOLLECTIONV2.png';
 import napkinHero from './assets/NapkinHeroV2.png';
 import ddaLogo from './assets/DDALOGO.png';
 import anishaCard from './assets/Anisha_CardPhoto.jpg';
-import footerLogo from './assets/SAPVECTORLOGO.svg';
 import ecoServiceCard from './assets/eco-action.svg';
 import wasteServiceCard from './assets/wastemanagement.svg';
 import refundServiceCard from './assets/refundables.svg';
@@ -305,17 +304,7 @@ import refundServiceCard from './assets/refundables.svg';
       </Carousel>
 
     {/* Footer Bar */}
-      <div className='bg-textmain flex p-2'>
-        <div className='flex items-center justify-center basis-11/12'>
-          <Footer/>
-        </div>
-        <div className='flex items-center justify-center basis-1/12'>
-          <img 
-          className='w-20 h-20'
-          src={footerLogo}
-          />
-        </div>
-      </div>
+    <Footer />
 
         
 
