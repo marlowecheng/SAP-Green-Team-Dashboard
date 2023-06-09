@@ -1,6 +1,6 @@
 import './style/App.css';
 
-import { Card, Metric, Text, Title, BarChart, Subtitle, AreaChart, DonutChart, Flex, BadgeDelta, Badge, BarList, Bold} from '@tremor/react';
+import { Card, Metric, Text, Title, BarChart, Subtitle, AreaChart, DonutChart, Flex, BadgeDelta, Badge, BarList, Bold, Grid, Col} from '@tremor/react';
 import { Carousel, Typography, IconButton, Chip, Navbar, MobileNav, Button, } from '@material-tailwind/react';
 import { ChevronLeftIcon, ArrowRightIcon, ChevronRightIcon, ArrowUpIcon, ArrowDownIcon } from '@heroicons/react/24/outline';
 import { Icon } from '@tremor/react/dist';
@@ -34,6 +34,23 @@ import refundServiceCard from './assets/refundables.svg';
       value: '36',
     }
   ]
+
+  const monthlyTotalWaste = [
+    {
+      name: "Cascade Recovery",
+      waste: 60
+    }, 
+    {
+      name: "Organics",
+      waste: 25
+    },
+    {
+      name: "Waste Control Services",
+      waste: 25
+    }
+  ]
+
+  // const valueFormatter = (number) => '% %{Intl.NumberFormat("us").format(number).toString()}';
 
   export default () => (
   <div>
@@ -187,6 +204,46 @@ import refundServiceCard from './assets/refundables.svg';
         </Card>
     </Carousel>
     </div>
+
+    <div>
+      <Card>
+        <Grid numItems={6} numItemsLg={6} className="gap-2">
+          <Card>
+            <DonutChart
+              data={monthlyTotalWaste}
+              category="waste"
+              colors={["blue", "green", "black"]}
+              variant="pie"
+              // valueFormatter={valueFormatter}  
+            />
+          </Card>
+          <Card>
+            <DonutChart
+              data={monthlyTotalWaste}
+              category="waste"
+              colors={["blue", "green", "black"]}
+              variant="pie"
+              // valueFormatter={valueFormatter}  
+            />
+          </Card>
+          <Col>
+            <Card>
+              <DonutChart
+                data={monthlyTotalWaste}
+                category="waste"
+                colors={["blue", "green", "black"]}
+                variant="pie"
+                // valueFormatter={valueFormatter}  
+              />
+            </Card>
+          </Col>
+        </Grid>
+      </Card>
+    </div>
+
+
+
+
     
     {/* WHATS NEW SECTION */}
     {/* <h1
@@ -274,13 +331,5 @@ import refundServiceCard from './assets/refundables.svg';
     {/* Footer Bar */}
     <Footer />
 
-        
-
-
-
-
-
-
-  
   </div>
 );
