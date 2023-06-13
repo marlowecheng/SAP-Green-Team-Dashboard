@@ -66,7 +66,6 @@ import refundServiceCard from './assets/refundables.svg';
       <WasteDiversion />
     </div>
 
-
     {/* Middle Carousel Section */}
     <div>
       <Carousel
