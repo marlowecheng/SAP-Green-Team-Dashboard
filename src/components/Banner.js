@@ -1,11 +1,11 @@
-import { Card } from '@tremor/react';
-import { ArrowUpIcon, ArrowDownIcon } from '@heroicons/react/24/outline'; 
+import { Card } from "@tremor/react";
+import { ArrowUpIcon, ArrowDownIcon } from "@heroicons/react/24/outline";
 
-import heroBackground from '../assets/SAPVECTORLOGO-COLOR.svg';
-import cascadeImage from '../assets/cascade-recovery-lineup.svg';
-import ecoActionImage from '../assets/eco-action-lineup.svg';
-import refundableImage from '../assets/refundables-lineup.svg';
-import wasteImage from '../assets/waste-management-lineup.svg';
+import heroBackground from "../assets/SAPVECTORLOGO-COLOR.svg";
+import cascadeImage from "../assets/cascade-recovery-lineup.svg";
+import ecoActionImage from "../assets/eco-action-lineup.svg";
+import refundableImage from "../assets/refundables-lineup.svg";
+import wasteImage from "../assets/waste-management-lineup.svg";
 
 function Banner() {
   return (
