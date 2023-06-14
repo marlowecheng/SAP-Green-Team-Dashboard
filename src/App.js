@@ -11,6 +11,7 @@ import Footer from './layouts/Footer';
 import Banner from './components/Banner';
 import OfficePresence from './components/OfficePresence';
 import WasteDiversion from './components/WasteDiversion';
+import MonthlyChange from './components/MonthlyChange';
 
 import cascadeImg from './assets/cascade-recovery.svg';
 import employeePresence from './assets/Employees.svg';
@@ -34,23 +35,6 @@ import refundServiceCard from './assets/refundables.svg';
       value: '36',
     }
   ]
-
-  const monthlyTotalWaste = [
-    {
-      name: "Cascade Recovery",
-      waste: 60
-    }, 
-    {
-      name: "Organics",
-      waste: 25
-    },
-    {
-      name: "Waste Control Services",
-      waste: 25
-    }
-  ]
-
-  // const valueFormatter = (number) => '% %{Intl.NumberFormat("us").format(number).toString()}';
 
   export default () => (
   <div>
@@ -204,40 +188,12 @@ import refundServiceCard from './assets/refundables.svg';
     </Carousel>
     </div>
 
+
+    {/* MONTHLY CHANGE SECTION */}
     <div>
-      <Card>
-        <Grid numItems={6} numItemsLg={6} className="gap-2">
-          <Card>
-            <DonutChart
-              data={monthlyTotalWaste}
-              category="waste"
-              colors={["blue", "green", "black"]}
-              variant="pie"
-              // valueFormatter={valueFormatter}  
-            />
-          </Card>
-          <Card>
-            <DonutChart
-              data={monthlyTotalWaste}
-              category="waste"
-              colors={["blue", "green", "black"]}
-              variant="pie"
-              // valueFormatter={valueFormatter}  
-            />
-          </Card>
-          <Col>
-            <Card>
-              <DonutChart
-                data={monthlyTotalWaste}
-                category="waste"
-                colors={["blue", "green", "black"]}
-                variant="pie"
-                // valueFormatter={valueFormatter}  
-              />
-            </Card>
-          </Col>
-        </Grid>
-      </Card>
+
+      <MonthlyChange />
+
     </div>
 
 
