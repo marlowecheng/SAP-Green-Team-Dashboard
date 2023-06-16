@@ -28,7 +28,7 @@ import employeePresence from './assets/Employees.svg';
     {
       name: 'Landfill',
       value: '36',
-    }
+    } 
   ]
 
   export default () => (
