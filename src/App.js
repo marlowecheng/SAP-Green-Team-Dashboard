@@ -1,10 +1,5 @@
 import './style/App.css';
 
-import { Card, Metric, Text, Title, BarChart, Subtitle, AreaChart, DonutChart, Flex, BadgeDelta, Badge, BarList, Bold, Grid, Col} from '@tremor/react';
-import { Carousel, Typography, IconButton, Chip, Navbar, MobileNav, Button, } from '@material-tailwind/react';
-import { ChevronLeftIcon, ArrowRightIcon, ChevronRightIcon, ArrowUpIcon, ArrowDownIcon } from '@heroicons/react/24/outline';
-import { Icon } from '@tremor/react/dist';
-
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
 
@@ -14,22 +9,6 @@ import WasteDiversion from './components/WasteDiversion';
 import MonthlyChange from './components/MonthlyChange';
 import InfoCards from './components/InfoCards';
 import NewsSection from './components/NewsSection';
-
-
-import employeePresence from './assets/Employees.svg';
-
-
-  //Creating an array for the data to be inputted into the 'Solid Waste Diversion' Card
-  const recycling = [
-    {
-      name: 'Diversion',
-      value: '64'
-    },
-    {
-      name: 'Landfill',
-      value: '36',
-    } 
-  ]
 
   export default () => (
   <div>
@@ -47,7 +26,7 @@ import employeePresence from './assets/Employees.svg';
 
     {/* Middle Carousel Section */}
     <div>
-      <InfoCards/>
+      <InfoCards />
     </div>
 
     {/* MONTHLY CHANGE SECTION */}
