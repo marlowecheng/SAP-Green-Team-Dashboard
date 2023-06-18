@@ -1,57 +1,57 @@
 import { Card, DonutChart } from '@tremor/react';  
 import WasteDiversion from './WasteDiversion';
 
-import coffeeGrounds from '../assets/coffee-grounds.png'
+import coffeeGrounds from '../assets/coffee-grounds.png';
+
+import data from '../data/data.json';
    
-   
+function MonthlyChange() {
 
+    const monthlyTotalWaste = [
+        {
+          name: "Cascade Recovery",
+          waste: 60
+        }, 
+        {
+          name: "Organics",
+          waste: 25
+        },
+        {
+          name: "Waste Control Services",
+          waste: 25
+        }
+      ]
+    
+    const cascadeBreakdown = [
+        {
+            name: "Non refundables",
+            waste: 45
+        },
+        {
+            name: "Mixed Paper",
+            waste: 25
+        },  
+        {
+            name: "Refundables",
+            waste: 20
+        },
+        {
+            name: "Confidential Paper",
+            waste: 10
+        }
+    ];
+    
+    const organicsBreakdown = [ 
+        {
+            name: "Coffee",
+            waste: 50
+        },
+        {
+            name: "Organics",
+            waste: 50
+        }
+    ];
 
-const monthlyTotalWaste = [
-    {
-      name: "Cascade Recovery",
-      waste: 60
-    }, 
-    {
-      name: "Organics",
-      waste: 25
-    },
-    {
-      name: "Waste Control Services",
-      waste: 25
-    }
-  ]
-
-const cascadeBreakdown = [
-    {
-        name: "Non refundables",
-        waste: 45
-    },
-    {
-        name: "Mixed Paper",
-        waste: 25
-    },  
-    {
-        name: "Refundables",
-        waste: 20
-    },
-    {
-        name: "Confidential Paper",
-        waste: 10
-    }
-]
-
-const organicsBreakdown = [ 
-    {
-        name: "Coffee",
-        waste: 50
-    },
-    {
-        name: "Organics",
-        waste: 50
-    }
-]
-   
-function MonthlyChange() {  
     return (
         <div classname='flex'>
             <div className='flex justify-center mt-10 bg-bgmain'>
