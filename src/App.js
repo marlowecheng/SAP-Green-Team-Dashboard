@@ -10,7 +10,9 @@ import MonthlyChange from './components/MonthlyChange';
 import InfoCards from './components/InfoCards';
 import NewsSection from './components/NewsSection';
 
-  export default () => (
+import data from './data/data.json';
+
+export default () => (
   <div>
 
     <Header />
