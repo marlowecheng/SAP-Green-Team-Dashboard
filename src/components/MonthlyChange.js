@@ -54,8 +54,8 @@ function MonthlyChange() {
 
     return (
         <div classname='flex'>
-            <div className='flex justify-center mt-10 bg-bgmain'>
-                <Card className='max-w-md m-4'>
+            <div className='flex justify-center items-center mt-10 bg-bgmain'>
+                <Card className='max-w-md m-2'>
                     <div>
                         <h1 className='font-bold text-textmain text-center text-xl mb-4'>Monthly Total Waste</h1>
                     </div>
@@ -86,7 +86,7 @@ function MonthlyChange() {
                 </Card>
 
                 {/* Cascade Recovery Breakdown Card */}
-                <Card className='max-w-md m-4'>
+                <Card className='max-w-md m-2'>
                     <div>
                         <h1 className='font-bold text-center text-textmain text-xl mb-4'>Cascade Recovery Breakdown</h1>
                     </div>
@@ -121,11 +121,12 @@ function MonthlyChange() {
                     </div>
                 </Card>
             </div>
+            
             {/* Organics Vs Coffee Grounds Card */}
-            <div className='bg-bgmain p-2'>
-                <div className='px-[300px]'>
+            <div className='bg-bgmain p-2 flex items-center justify-center'>
+                <div className=''>
 
-                        <Card className='flex gap-x-10'>
+                        <Card className='flex gap-x-10 justify-center items-center'>
                             <div>
                                 <div className='flex flex-col'>
                                     <div>

@@ -13,7 +13,7 @@ function InfoCards() {
 return (
     <div>
         <Carousel
-            className='bg-bgmain'
+            className=''
             prevArrow={({ handlePrev }) => (
             <IconButton
                 size="lg"
