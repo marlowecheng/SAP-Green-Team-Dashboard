@@ -136,7 +136,7 @@ function MonthlyChange() {
                                         className=''
                                         data={organicsBreakdown}
                                         category="waste"
-                                        colors={['tan','green']}
+                                        colors={['stone','green']}
                                         variant="pie"
                                     // valueFormatter={valueFormatter}  
                                     />
