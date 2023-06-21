@@ -9,36 +9,36 @@ function MonthlyChange() {
 
     const monthlyTotalWaste = [
         {
-          name: "Cascade Recovery",
-          waste: 60
-        }, 
-        {
-          name: "Organics",
-          waste: 25
+            name: "Organics",
+            waste: 25
         },
         {
-          name: "Waste Control Services",
-          waste: 25
-        }
+            name: "Waste Control Services",
+            waste: 30
+        },
+        {
+          name: "Cascade Recovery",
+          waste: 45
+        }, 
       ]
     
     const cascadeBreakdown = [
         {
-            name: "Non refundables",
-            waste: 45
-        },
-        {
             name: "Mixed Paper",
-            waste: 25
+            waste: 20
         },  
         {
             name: "Refundables",
-            waste: 20
+            waste: 10
         },
         {
             name: "Confidential Paper",
-            waste: 10
-        }
+            waste: 30   
+        },
+        {
+            name: "Non refundables",
+            waste: 40
+        },
     ];
     
     const organicsBreakdown = [ 
@@ -63,7 +63,7 @@ function MonthlyChange() {
                         className='max-w-sm'
                         data={monthlyTotalWaste}
                         category="waste"
-                        colors={["blue", "green", "black"]}
+                        colors={["green", "stone", "sky"]}
                         variant="pie"
                         // valueFormatter={valueFormatter}  
                     />
@@ -74,12 +74,12 @@ function MonthlyChange() {
                         </div>
 
                         <div className='flex m-2 gap-x-2'>
-                            <p className='bg-green-700 w-6 h-6 rounded-full'></p>
+                            <p className='bg-green w-6 h-6 rounded-full'></p>
                             <h2 className='font-semibold'>Organics</h2>
                         </div>
 
                         <div className='flex m-2 gap-x-2'>
-                            <p className='bg-gray-800 w-6 h-6 rounded-full'></p>
+                            <p className='bg-stone w-6 h-6 rounded-full'></p>
                             <h2 className='font-semibold'>Waste Control Services</h2>
                         </div>
                     </div>
@@ -94,30 +94,31 @@ function MonthlyChange() {
                         className='max-w-sm'
                         data={cascadeBreakdown}
                         category="waste"
-                        colors={["yellow", "blue", "orange", "purple"]}
+                        colors={["yellow", "blue", "orange", "stone"]}
                         variant="pie"
                     // valueFormatter={valueFormatter}  
                     />
                     <div className='flex flex-wrap gap-x-2 mt-4 ml-10'>
                         <div className='flex m-2 gap-x-2'>
-                            <p className='bg-yellow-700 w-6 h-6 rounded-full'></p>
+                            <p className='bg-stone w-6 h-6 rounded-full'></p>
                             <h2 className='font-semibold'>Non Refundables</h2>
                         </div>
 
                         <div className='flex m-2 gap-x-2'>
-                            <p className='bg-orange-700 w-6 h-6 rounded-full'></p>
+                            <p className='bg-yellow w-6 h-6 rounded-full'></p>
                             <h2 className='font-semibold'>Mixed Paper</h2>
-                        </div>
-
-                        <div className='flex m-2 gap-x-2'>
-                            <p className='bg-purple-600 w-6 h-6 rounded-full'></p>
-                            <h2 className='font-semibold'>Confidential Paper</h2>
                         </div>
 
                         <div className='flex m-2 gap-x-2'>
                             <p className='bg-blue-600 w-6 h-6 rounded-full'></p>
                             <h2 className='font-semibold'>Refundables</h2>
                         </div>
+
+                        <div className='flex m-2 gap-x-2'>
+                            <p className='bg-orange w-6 h-6 rounded-full'></p>
+                            <h2 className='font-semibold'>Confidential Paper</h2>
+                        </div>
+
                     </div>
                 </Card>
             </div>
@@ -147,7 +148,7 @@ function MonthlyChange() {
                                         </div>
 
                                         <div className='flex m-2 gap-x-2'>
-                                            <p className='bg-brown-700 w-6 h-6 rounded-full'></p>
+                                            <p className='bg-stone w-6 h-6 rounded-full'></p>
                                             <h2 className='font-semibold'>Coffee Grounds</h2>
                                         </div>
                                     </div>
