@@ -1,9 +1,14 @@
+import { useState } from 'react';
 import { Card, DonutChart } from '@tremor/react';  
 import WasteDiversion from './WasteDiversion';
 
 import coffeeGrounds from '../assets/coffee-grounds.png';
 
 import data from '../data/data.json';
+
+function SwitchMonths() {   
+    const [month, setMonth] = useState()
+}
    
 function MonthlyChange() {
 
