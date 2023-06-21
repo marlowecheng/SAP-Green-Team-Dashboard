@@ -9,6 +9,7 @@ import WasteDiversion from './components/WasteDiversion';
 import MonthlyChange from './components/MonthlyChange';
 import InfoCards from './components/InfoCards';
 import NewsSection from './components/NewsSection';
+import Slider from './components/SwitchMonths';
 
 import data from './data/data.json';
 

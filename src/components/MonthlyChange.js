@@ -1,14 +1,14 @@
-import { useState } from 'react';
 import { Card, DonutChart } from '@tremor/react';  
 import WasteDiversion from './WasteDiversion';
+
+import SwitchMonths from './SwitchMonths';
 
 import coffeeGrounds from '../assets/coffee-grounds.png';
 
 import data from '../data/data.json';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import Slider from './SwitchMonths';
 
-function SwitchMonths() {   
-    const [month, setMonth] = useState()
-}
    
 function MonthlyChange() {
 
@@ -58,8 +58,18 @@ function MonthlyChange() {
     ];
 
     return (
-        <div classname='flex'>
-            <div className='flex justify-center items-center mt-10 bg-bgmain'>
+    
+        <div>
+            <div className='text-center'>
+                <div className=''>
+                    <h1 className='text-3xl font-semibold bg-textmain text-white'>
+                        <ChevronLeftIcon className='w-10 h-10'/>
+                            MARCH 2023
+                        <ChevronRightIcon className='w-10 h-10'/>
+                    </h1>
+                </div>
+            </div>
+            <div className='flex justify-center items-center mt-5 bg-bgmain'>
                 <Card className='max-w-md m-2'>
                     <div>
                         <h1 className='font-bold text-textmain text-center text-xl mb-4'>Monthly Total Waste</h1>
