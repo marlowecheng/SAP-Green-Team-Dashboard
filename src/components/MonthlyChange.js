@@ -143,7 +143,7 @@ function MonthlyChange() {
                                     />
                                     <div className='flex mt-10'>
                                         <div className='flex m-2 gap-x-2'>
-                                            <p className='bg-green-700 w-6 h-6 rounded-full'></p>
+                                            <p className='bg-green w-6 h-6 rounded-full'></p>
                                             <h2 className='font-semibold'>Organic Waste</h2>
                                         </div>
 
