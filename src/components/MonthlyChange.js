@@ -63,13 +63,13 @@ function MonthlyChange() {
             <div className='text-center'>
                 <div className='flex justify-center items-center bg-textmain p-2'>
                     <div>
-                        <ChevronLeftIcon className='w-10 h-10 text-white'/>
+                        <ChevronLeftIcon className='w-10 h-10 text-white' strokeWidth={3}/>
                     </div>
                     <div className=''>
                         <h1 className='text-3xl font-semibold text-white'>MARCH 2023</h1>
                     </div>
                     <div>
-                        <ChevronRightIcon className='w-10 h-10 text-white'/>
+                        <ChevronRightIcon className='w-10 h-10 text-white' strokeWidth={3}/>
                     </div>
                 </div>
             </div>
