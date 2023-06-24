@@ -18,7 +18,7 @@ function Banner() {
           Team Revolution
         </h1>
         <h2 className="text-textmain text-2xl z-10">
-          Witness the Journey from Waste to sustainability.
+          Witness the Journey from Waste to Sustainability.
         </h2>
         <div className="absolute top-1 right-0 left-[-50px] bottom-0">
           <img
