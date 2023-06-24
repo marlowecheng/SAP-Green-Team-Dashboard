@@ -61,15 +61,19 @@ function MonthlyChange() {
     
         <div>
             <div className='text-center'>
-                <div className=''>
-                    <h1 className='text-3xl font-semibold bg-textmain text-white'>
-                        <ChevronLeftIcon className='w-10 h-10'/>
-                            MARCH 2023
-                        <ChevronRightIcon className='w-10 h-10'/>
-                    </h1>
+                <div className='flex justify-center items-center bg-textmain p-2'>
+                    <div>
+                        <ChevronLeftIcon className='w-10 h-10 text-white'/>
+                    </div>
+                    <div className=''>
+                        <h1 className='text-3xl font-semibold text-white'>MARCH 2023</h1>
+                    </div>
+                    <div>
+                        <ChevronRightIcon className='w-10 h-10 text-white'/>
+                    </div>
                 </div>
             </div>
-            <div className='flex justify-center items-center mt-5 bg-bgmain'>
+            <div className='flex justify-center items-center bg-bgmain pt-12'>
                 <Card className='max-w-md m-2'>
                     <div>
                         <h1 className='font-bold text-textmain text-center text-xl mb-4'>Monthly Total Waste</h1>
@@ -139,9 +143,8 @@ function MonthlyChange() {
             </div>
             
             {/* Organics Vs Coffee Grounds Card */}
-            <div className='bg-bgmain p-2 flex items-center justify-center'>
+            <div className='bg-bgmain p-2 flex items-center justify-center pb-12'>
                 <div className=''>
-
                         <Card className='flex gap-x-10 justify-center items-center'>
                             <div>
                                 <div className='flex flex-col'>
