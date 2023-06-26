@@ -1,8 +1,6 @@
 import { Card, DonutChart } from '@tremor/react';  
 import WasteDiversion from './WasteDiversion';
 
-import SwitchMonths from './SwitchMonths';
-
 import coffeeGrounds from '../assets/coffee-grounds.png';
 
 import data from '../data/data.json';
@@ -84,7 +82,6 @@ function MonthlyChange() {
                         category="waste"
                         colors={["green", "stone", "sky"]}
                         variant="pie"
-                        // valueFormatter={valueFormatter}  
                     />
                     <div className='flex flex-wrap gap-x-2 mt-4 ml-10'>
                         <div className='flex m-2 gap-x-2'>
