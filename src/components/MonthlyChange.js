@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Card, DonutChart } from '@tremor/react';  
 import WasteDiversion from './WasteDiversion';
 
@@ -7,6 +8,9 @@ import data from '../data/data.json';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import Slider from './SwitchMonths';
 
+function SwitchMonths() {
+    
+}
    
 function MonthlyChange() {
 
@@ -63,7 +67,7 @@ function MonthlyChange() {
                     <div>
                         <ChevronLeftIcon className='w-10 h-10 text-white' strokeWidth={3}/>
                     </div>
-                    <div className=''>
+                    <div>
                         <h1 className='text-3xl font-semibold text-white'>MARCH 2023</h1>
                     </div>
                     <div>
