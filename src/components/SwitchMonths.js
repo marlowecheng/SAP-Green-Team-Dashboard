@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from 'react';
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
 import MonthlyChange from "./MonthlyChange";
 
