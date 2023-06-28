@@ -12,16 +12,16 @@ import lettuce from "../assets/lettuce.svg";
 import bones from "../assets/bones.svg";
 import bananaPeel from "../assets/banana-peel.svg";
 import appleCore from "../assets/apple-core.svg";
-import takeoutContainer from "../assets/takeout-container.svg";
-import spoonFork from "../assets/spoon-and-fork.svg";
-import chipBag from "../assets/orange-chip-bag.svg";
-import foodWrapper from "../assets/food-wrapper.svg";
-import blueMask from "../assets/blue-medical-mask.svg";
-import waterBottle from "../assets/water-bottle.svg";
+import takeoutContainer from "../assets/styrofoam-container.svg";
+import spoonFork from "../assets/fork-and-spoon.svg";
+import chipBag from "../assets/food-wrappers.svg";
+import foodWrapper from "../assets/food-wrappers.svg";
+import blueMask from "../assets/face-mask.svg";
+import waterBottle from "../assets/plastic-water-bottle.svg";
 import redsodaCan from "../assets/red-soda-can.svg";
 import tinCan from "../assets/orange-tin-can.svg";
 import glassBottle from "../assets/glass-water-bottle.svg";
-import greensodaCan from "../assets/green-soda-can.svg";
+import greensodaCan from "../assets/tall-green-soda-can.svg";
 
 
 

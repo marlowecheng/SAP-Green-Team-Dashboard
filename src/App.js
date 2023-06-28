@@ -1,17 +1,18 @@
 import './style/App.css';
+import data from './data/data.json';
 
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
 
 import Banner from './components/Banner';
 import OfficePresence from './components/OfficePresence';
+import PieCharts from './components/PieCharts';
 import WasteDiversion from './components/WasteDiversion';
 import MonthlyChange from './components/MonthlyChange';
 import InfoCards from './components/InfoCards';
 import NewsSection from './components/NewsSection';
 import Slider from './components/SwitchMonths';
 
-import data from './data/data.json';
 
 export default () => (
   <div>
@@ -34,7 +35,8 @@ export default () => (
 
     {/* MONTHLY CHANGE SECTION */}
     <div>
-      <MonthlyChange />
+      <PieCharts />
+      {/* <MonthlyChange /> */}
     </div>
 
 
@@ -43,7 +45,7 @@ export default () => (
       className='text-xl'
     >What's new, SAP?</h1> */}
     <div>
-      <NewsSection/>
+      <NewsSection />
     </div>
 
     {/* Footer Bar */}
