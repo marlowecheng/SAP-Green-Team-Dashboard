@@ -3,7 +3,8 @@ import WasteDiversion from './WasteDiversion';
 
 import coffeeGrounds from '../assets/coffee-grounds.png';
 
-import data from '../data/data.json';
+import monthlyData from '../data/monthlyData2023.json';
+
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import Slider from './SwitchMonths';
 
@@ -54,6 +55,8 @@ function MonthlyChange() {
             waste: 50
         }
     ];
+
+    console.log();
 
     return (
     
