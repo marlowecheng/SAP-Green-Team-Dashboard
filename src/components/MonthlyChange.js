@@ -56,8 +56,6 @@ function MonthlyChange() {
         }
     ];
 
-    console.log();
-
     return (
     
         <div>
