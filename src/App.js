@@ -9,6 +9,8 @@ import WasteDiversion from './components/WasteDiversion';
 import MonthlyChange from './components/MonthlyChange';
 import InfoCards from './components/InfoCards';
 import NewsSection from './components/NewsSection';
+import Test from './test/test';
+
 import Slider from './components/SwitchMonths';
 
 import data from './data/data.json';
@@ -35,6 +37,9 @@ export default () => (
     {/* MONTHLY CHANGE SECTION */}
     <div>
       <MonthlyChange />
+
+      {/* @NOTE: REMOVE THIS PLEASE */}
+      <Test />
     </div>
 
 
