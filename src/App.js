@@ -1,5 +1,6 @@
 import "./style/App.css";
 import data from "./data/data.json";
+import monthlyData from "./data/monthlyData2023.json";
 
 import Header from "./layouts/Header";
 import Footer from "./layouts/Footer";
@@ -12,6 +13,7 @@ import MonthlyChange from "./components/MonthlyChange";
 import InfoCards from "./components/InfoCards";
 import NewsSection from "./components/NewsSection";
 import Test from "./test/test";
+import TestData from "./components/TestPage";
 
 import Slider from "./components/SwitchMonths";
 
@@ -42,6 +44,11 @@ export default () => (
     <div>
       {/* @NOTE: REMOVE THIS PLEASE */}
       <Test />
+    </div>
+
+    <div>
+      {/* @NOTE: REMOVE THIS PLEASE */}
+      <TestData />
     </div>
 
     {/* WHATS NEW SECTION */}
