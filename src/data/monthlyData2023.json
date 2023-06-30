@@ -1,6 +1,8 @@
 {
-    "january": [
-        {
+    "test" :"this is a test",
+    "year2023": [
+        {   
+            "month": "january",
 			"rigidsNonRefundable": 111.98793599999999,
 			"mixedPaperFiber": 67.5,
 			"confidentialPaper": 911.1347231999999,
@@ -18,6 +20,26 @@
 			"garbage": 311.617704,
 			"total": 2254.5397311999996,
 			"diverted": 0.8617821191227628
+        },
+        {
+            "month": "february",
+			"rigidsNonRefundable": 143.739376,
+			"mixedPaperFiber": 162,
+			"confidentialPaper": 490,
+			"compost": 706.242744,
+			"coffeeGrounds": 119.294696,
+			"eWasteDesktop": 0,
+			"eWasteDataCentre": 0,
+			"itDonations": 0,
+			"furnitureAndMisc": 0,
+			"pensHighlighter": 0,
+			"batteriesCD": 0,
+			"metalWoodPaint": 0,
+			"tubesBulbs": 0,
+			"tonerCartridges": 0,
+			"garbage": 556.557384,
+			"total": 2177.8342000000002,
+			"diverted": 0.7444445568905108
         }
     ],
     "february": [

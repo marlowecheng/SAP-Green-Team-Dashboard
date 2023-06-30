@@ -29,8 +29,6 @@ function MonthlyChange() {
         setCount(count + 1);
     }
 
-    console.log();
-
     return (
         <div>
         </div>
