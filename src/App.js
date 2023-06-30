@@ -35,11 +35,10 @@ export default () => (
 
     {/* MONTHLY CHANGE SECTION */}
     <div>
-      <MonthlyChange />
-
       <PieCharts />
       {/* <MonthlyChange /> */}
     </div>
+
     <div>
       {/* @NOTE: REMOVE THIS PLEASE */}
       <Test />
