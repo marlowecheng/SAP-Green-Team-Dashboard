@@ -1,31 +1,29 @@
-import './style/App.css';
-import data from './data/data.json';
+import "./style/App.css";
+import data from "./data/data.json";
 
-import Header from './layouts/Header';
-import Footer from './layouts/Footer';
+import Header from "./layouts/Header";
+import Footer from "./layouts/Footer";
 
-import Banner from './components/Banner';
-import OfficePresence from './components/OfficePresence';
-import PieCharts from './components/PieCharts';
-import WasteDiversion from './components/WasteDiversion';
-import MonthlyChange from './components/MonthlyChange';
-import InfoCards from './components/InfoCards';
-import NewsSection from './components/NewsSection';
-import Test from './test/test';
+import Banner from "./components/Banner";
+import OfficePresence from "./components/OfficePresence";
+import PieCharts from "./components/PieCharts";
+import WasteDiversion from "./components/WasteDiversion";
+import MonthlyChange from "./components/MonthlyChange";
+import InfoCards from "./components/InfoCards";
+import NewsSection from "./components/NewsSection";
+import Test from "./test/test";
 
-import Slider from './components/SwitchMonths';
-
+import Slider from "./components/SwitchMonths";
 
 export default () => (
   <div>
-
     <Header />
     <Banner />
 
-    <div className='flex flex-row items-center justify-evenly m-10'>
+    <div className="flex flex-row items-center justify-evenly m-10">
       {/* Office Presence Card */}
       <OfficePresence />
-      
+
       {/* Waste Diversion Section */}
       <WasteDiversion />
     </div>
@@ -39,12 +37,13 @@ export default () => (
     <div>
       <MonthlyChange />
 
-      {/* @NOTE: REMOVE THIS PLEASE */}
-      <Test />
       <PieCharts />
       {/* <MonthlyChange /> */}
     </div>
-
+    <div>
+      {/* @NOTE: REMOVE THIS PLEASE */}
+      <Test />
+    </div>
 
     {/* WHATS NEW SECTION */}
     {/* <h1
@@ -56,6 +55,5 @@ export default () => (
 
     {/* Footer Bar */}
     <Footer />
-
   </div>
 );
