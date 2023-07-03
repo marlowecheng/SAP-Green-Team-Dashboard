@@ -1,38 +1,42 @@
 // Test Page for pulling data 
 // Remove Before Production 
 
-import React, { useState, useEffect, setData } from 'react';
+import React, { useState, useEffect } from 'react';
 import year2023 from '../data/monthlyData2023.json';
 
 // console.log(year2023)
 
 const TestData = () => {
-    const [ data, setData ] = useState();
+    const [ data, setData ] = useState([]);
     const year2023 = data;
 
-    // console.log(data)
+    console.log(year2023)
 
     useEffect(() => {
         // fetch data
         const dataFetch = async () => {
-            const year2023 = await (
-                await fetch(
-                    "../data/monthlyData2023.json"
-                )
-            ).json();
-                
-            // set state when the data received 
-            setData(year2023);
+            try {
+                const response = await fetch('../data/monthlyData2023.json');
+                const json = await response.json()
+                setData(json.data);
+            } catch (error) {
+                console.log('Error Fetching Data: ', error);
+            }
         };
 
         dataFetch();
     },  []);
 
 
-    return (
+    return (    
         <div>
-            <h1 className='text-red-400'>{year2023}</h1>
-            {/* <h2 className='text-red-400'>{year2023.garbage}</h2> */}
+            {year2023.map((item, index) => (
+                <div key={index}>
+                    <h1 className='text-red-400'>{item}DATA HERE</h1>
+                    {/* Access specific properties if needed */}
+                    <h2 className='text-red-400'>{item.garbage}DATA HERE</h2>
+                </div>
+            ))}
         </div>
     )
 }
