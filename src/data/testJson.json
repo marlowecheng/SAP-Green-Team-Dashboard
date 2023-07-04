@@ -1,0 +1,254 @@
+{
+"february": [
+    {
+        "rigidsNonRefundable": 143.739376,
+        "mixedPaperFiber": 162,
+        "confidentialPaper": 490,
+        "compost": 706.242744,
+        "coffeeGrounds": 119.294696,
+        "eWasteDesktop": 0,
+        "eWasteDataCentre": 0,
+        "itDonations": 0,
+        "furnitureAndMisc": 0,
+        "pensHighlighter": 0,
+        "batteriesCD": 0,
+        "metalWoodPaint": 0,
+        "tubesBulbs": 0,
+        "tonerCartridges": 0,
+        "garbage": 556.557384,
+        "total": 2177.8342000000002,
+        "diverted": 0.7444445568905108
+    }
+],
+"march": [
+    {
+        "rigidsNonRefundable": 243,
+        "mixedPaperFiber": 198,
+        "confidentialPaper": 154,
+        "compost": 761,
+        "coffeeGrounds": 71,
+        "eWasteDesktop": 0,
+        "eWasteDataCentre": 0,
+        "itDonations": 2118,
+        "furnitureAndMisc": 22363,
+        "pensHighlighter": 0,
+        "batteriesCD": 13721,
+        "metalWoodPaint": 0,
+        "tubesBulbs": 0,
+        "tonerCartridges": 0,
+        "garbage": 431,
+        "total": 40060,
+        "diverted": 0.989243316
+    }
+],
+"april": [
+    {
+        "rigidsNonRefundable": 124,
+        "mixedPaperFiber": 144,
+        "confidentialPaper": 0,
+        "compost": 858,
+        "coffeeGrounds": 46,
+        "eWasteDesktop": 0,
+        "eWasteDataCentre": 0,
+        "itDonations": 0,
+        "furnitureAndMisc": 2684,
+        "pensHighlighter": 5,
+        "batteriesCD": 0,
+        "metalWoodPaint": 1807,
+        "tubesBulbs": 0,
+        "tonerCartridges": 0,
+        "garbage": 302,
+        "total": 5969,
+        "diverted": 0.9494681
+    }
+],
+"may": [
+    {
+        "rigidsNonRefundable": 0,
+        "mixedPaperFiber": 0,
+        "confidentialPaper": 0,
+        "compost": 0,
+        "coffeeGrounds": 0,
+        "eWasteDesktop": 0,
+        "eWasteDataCentre": 0,
+        "itDonations": 0,
+        "furnitureAndMisc": 0,
+        "pensHighlighter": 0,
+        "batteriesCD": 0,
+        "metalWoodPaint": 0,
+        "tubesBulbs": 0,
+        "tonerCartridges": 0,
+        "garbage": 0,
+        "total": 0,
+        "diverted": 0
+    }
+],
+"june": [
+    {
+        "rigidsNonRefundable": 0,
+        "mixedPaperFiber": 0,
+        "confidentialPaper": 0,
+        "compost": 0,
+        "coffeeGrounds": 0,
+        "eWasteDesktop": 0,
+        "eWasteDataCentre": 0,
+        "itDonations": 0,
+        "furnitureAndMisc": 0,
+        "pensHighlighter": 0,
+        "batteriesCD": 0,
+        "metalWoodPaint": 0,
+        "tubesBulbs": 0,
+        "tonerCartridges": 0,
+        "garbage": 0,
+        "total": 0,
+        "diverted": 0
+    }
+],
+"july": [
+    {
+        "rigidsNonRefundable": 0,
+        "mixedPaperFiber": 0,
+        "confidentialPaper": 0,
+        "compost": 0,
+        "coffeeGrounds": 0,
+        "eWasteDesktop": 0,
+        "eWasteDataCentre": 0,
+        "itDonations": 0,
+        "furnitureAndMisc": 0,
+        "pensHighlighter": 0,
+        "batteriesCD": 0,
+        "metalWoodPaint": 0,
+        "tubesBulbs": 0,
+        "tonerCartridges": 0,
+        "garbage": 0,
+        "total": 0,
+        "diverted": 0
+    }
+],
+"august": [
+    {
+        "rigidsNonRefundable": 0,
+        "mixedPaperFiber": 0,
+        "confidentialPaper": 0,
+        "compost": 0,
+        "coffeeGrounds": 0,
+        "eWasteDesktop": 0,
+        "eWasteDataCentre": 0,
+        "itDonations": 0,
+        "furnitureAndMisc": 0,
+        "pensHighlighter": 0,
+        "batteriesCD": 0,
+        "metalWoodPaint": 0,
+        "tubesBulbs": 0,
+        "tonerCartridges": 0,
+        "garbage": 0,
+        "total": 0,
+        "diverted": 0
+    }
+],
+"september": [
+    {
+        "rigidsNonRefundable": 0,
+        "mixedPaperFiber": 0,
+        "confidentialPaper": 0,
+        "compost": 0,
+        "coffeeGrounds": 0,
+        "eWasteDesktop": 0,
+        "eWasteDataCentre": 0,
+        "itDonations": 0,
+        "furnitureAndMisc": 0,
+        "pensHighlighter": 0,
+        "batteriesCD": 0,
+        "metalWoodPaint": 0,
+        "tubesBulbs": 0,
+        "tonerCartridges": 0,
+        "garbage": 0,
+        "total": 0,
+        "diverted": 0
+    }
+],
+"october": [
+    {
+        "rigidsNonRefundable": 0,
+        "mixedPaperFiber": 0,
+        "confidentialPaper": 0,
+        "compost": 0,
+        "coffeeGrounds": 0,
+        "eWasteDesktop": 0,
+        "eWasteDataCentre": 0,
+        "itDonations": 0,
+        "furnitureAndMisc": 0,
+        "pensHighlighter": 0,
+        "batteriesCD": 0,
+        "metalWoodPaint": 0,
+        "tubesBulbs": 0,
+        "tonerCartridges": 0,
+        "garbage": 0,
+        "total": 0,
+        "diverted": 0
+    }
+],
+"november": [
+    {
+        "rigidsNonRefundable": 0,
+        "mixedPaperFiber": 0,
+        "confidentialPaper": 0,
+        "compost": 0,
+        "coffeeGrounds": 0,
+        "eWasteDesktop": 0,
+        "eWasteDataCentre": 0,
+        "itDonations": 0,
+        "furnitureAndMisc": 0,
+        "pensHighlighter": 0,
+        "batteriesCD": 0,
+        "metalWoodPaint": 0,
+        "tubesBulbs": 0,
+        "tonerCartridges": 0,
+        "garbage": 0,
+        "total": 0,
+        "diverted": 0
+    }
+],
+"december": [
+    {
+        "rigidsNonRefundable": 0,
+        "mixedPaperFiber": 0,
+        "confidentialPaper": 0,
+        "compost": 0,
+        "coffeeGrounds": 0,
+        "eWasteDesktop": 0,
+        "eWasteDataCentre": 0,
+        "itDonations": 0,
+        "furnitureAndMisc": 0,
+        "pensHighlighter": 0,
+        "batteriesCD": 0,
+        "metalWoodPaint": 0,
+        "tubesBulbs": 0,
+        "tonerCartridges": 0,
+        "garbage": 0,
+        "total": 0,
+        "diverted": 0
+    }
+],
+"template": [
+    {
+        "rigidsNonRefundable": 0,
+        "mixedPaperFiber": 0,
+        "confidentialPaper": 0,
+        "compost": 0,
+        "coffeeGrounds": 0,
+        "eWasteDesktop": 0,
+        "eWasteDataCentre": 0,
+        "itDonations": 0,
+        "furnitureAndMisc": 0,
+        "pensHighlighter": 0,
+        "batteriesCD": 0,
+        "metalWoodPaint": 0,
+        "tubesBulbs": 0,
+        "tonerCartridges": 0,
+        "garbage": 0,
+        "total": 0,
+        "diverted": 0
+    }
+]
+}

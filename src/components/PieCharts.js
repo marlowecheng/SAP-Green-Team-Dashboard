@@ -4,22 +4,22 @@ import { Card, DonutChart } from '@tremor/react';
 import coffeeGrounds from '../assets/coffee-grounds.png';
 
 import data from '../data/data.json';
+import year2023 from '../data/monthlyData2023.json';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import MonthlyChange from './MonthlyChange';
-
+import TestData from './TestPage';
 
 function PieCharts() {
 
     const [count, setCount] = useState(0);
     
     // 1. Make left and Right Arrows clickable 
-    // 2. After one is clicked, it should update the data dependnent on the month 
+    // 2. After one is clicked, it should update the data dependent on the month 
     // 3. Display the data that correlated to the month which in this case would be may and july 
     // 4. Be able to switch back and forth between months 
 
-    function prevMonth () {
+    function prevMonth() {
         setCount(count - 1);
-        
     }
 
     function nextMonth() {
@@ -71,7 +71,6 @@ function PieCharts() {
         }
     ];
 
-
     return (
         <div>
             <div className='text-center'>
@@ -88,6 +87,7 @@ function PieCharts() {
                     </div>
                 </div>
             </div>
+            <TestData month={count} />
             <div className='flex justify-center items-center bg-bgmain pt-12'>
                 <Card className='max-w-md m-2'>
                     <div>
