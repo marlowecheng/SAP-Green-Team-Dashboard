@@ -1,0 +1,28 @@
+{
+    "EMPLOYEE": [
+        {
+            "month": "january",
+            "count": 0
+        }, 
+        {
+            "month": "february",
+            "count": 0
+        },
+        {
+            "month": "march",
+            "count": 0
+        },
+        {
+            "month": "april",
+            "count": 3723
+        },
+        {
+            "month": "may",
+            "count": 5773
+        },
+        {
+            "month": "june",
+            "count": 4616
+        }
+    ]
+}
