@@ -21,7 +21,7 @@ const TestData = ({month}) => {
             <div>
                 <h1 className='text-red-400'>{(data.YEAR2023[0].month)}</h1>
                 {/* Access specific properties if needed */}
-                <h2 className='text-red-400'>{}</h2>
+                <h2 className='text-red-400'></h2>
             </div>
         </div>
     )
