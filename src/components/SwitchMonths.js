@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
-import MonthlyChange from "./MonthlyChange";
+import MonthlyChange from './MonthlyChange';
+import data from '../data/monthlyData2023.json'
 
 const Slider = ({ slides }) => {   
     const [current, setCurrent] = useState(0);

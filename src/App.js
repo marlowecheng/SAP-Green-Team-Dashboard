@@ -13,7 +13,6 @@ import MonthlyChange from "./components/MonthlyChange";
 import InfoCards from "./components/InfoCards";
 import NewsSection from "./components/NewsSection";
 import Test from "./test/test";
-import Data from "./components/TestPage";
 
 import Slider from "./components/SwitchMonths";
 import TestData from "./components/TestPage";

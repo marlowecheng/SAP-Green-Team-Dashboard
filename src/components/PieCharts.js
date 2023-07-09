@@ -3,8 +3,7 @@ import { Card, DonutChart } from '@tremor/react';
 
 import coffeeGrounds from '../assets/coffee-grounds.png';
 
-import data from '../data/data.json';
-import year2023 from '../data/monthlyData2023.json';
+import data from '../data/monthlyData2023.json';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import MonthlyChange from './MonthlyChange';
 import TestData from './TestPage';
@@ -29,45 +28,45 @@ function PieCharts() {
     const monthlyTotalWaste = [
         {
             name: "Organics",
-            waste: 25
+            waste: data.YEAR2023[4].coffeeGrounds
         },
         {
             name: "Waste Control Services",
-            waste: 30
+            waste: data.YEAR2023[4].garbage
         },
         {
           name: "Cascade Recovery",
-          waste: 45
+          waste: data.YEAR2023[4].rigidsNonRefundable
         }, 
       ]
     
     const cascadeBreakdown = [
         {
             name: "Mixed Paper",
-            waste: 20
+            waste: data.YEAR2023[4].mixedPaperFiber
         },  
         {
-            name: "Refundables",
-            waste: 10
+            name: "Confidential Paper",
+            waste: data.YEAR2023[4].confidentialPaper
         },
         {
             name: "Confidential Paper",
-            waste: 30   
+            waste: data.YEAR2023[4].confidentialPaper
         },
         {
             name: "Non refundables",
-            waste: 40
+            waste: data.YEAR2023[4].rigidsNonRefundable
         },
     ];
     
     const organicsBreakdown = [ 
         {
             name: "Coffee",
-            waste: 50
+            waste: data.YEAR2023[4].coffeeGrounds
         },
         {
             name: "Organics",
-            waste: 50
+            waste: data.YEAR2023[4].rigidsNonRefundable
         }
     ];
 
@@ -171,7 +170,7 @@ function PieCharts() {
                                         category="waste"
                                         colors={['stone','green']}
                                         variant="pie"
-                                    // valueFormatter={valueFormatter}  
+
                                     />
                                     <div className='flex mt-10'>
                                         <div className='flex m-2 gap-x-2'>
