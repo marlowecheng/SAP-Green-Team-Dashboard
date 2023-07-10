@@ -5,12 +5,11 @@ import coffeeGrounds from '../assets/coffee-grounds.png';
 
 import data from '../data/monthlyData2023.json';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
-import MonthlyChange from './MonthlyChange';
 import TestData from './TestPage';
 
 function PieCharts() {
 
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState('');
     
     // 1. Make left and Right Arrows clickable 
     // 2. After one is clicked, it should update the data dependent on the month 
@@ -18,8 +17,12 @@ function PieCharts() {
     // 4. Be able to switch back and forth between months 
 
     function prevMonth() {
-        setCount(count - 1);
-    }
+        // For loop to iterate over the array 
+        const result = [];
+            for (let i = 0; i < data.YEAR2023.length; i--) {
+                result.push(<li>{data.YEAR2023.month}</li>)
+                }
+        }
 
     function nextMonth() {
         setCount(count + 1);
@@ -50,12 +53,12 @@ function PieCharts() {
             waste: data.YEAR2023[4].confidentialPaper
         },
         {
-            name: "Confidential Paper",
-            waste: data.YEAR2023[4].confidentialPaper
+            name: "Garbage",
+            waste: data.YEAR2023[4].garbage
         },
         {
             name: "Non refundables",
-            waste: data.YEAR2023[4].rigidsNonRefundable
+            waste: data.YEAR2023[4].coffeeGrounds
         },
     ];
     
@@ -80,6 +83,14 @@ function PieCharts() {
                     <div>
                         <h1 className='text-3xl font-semibold text-white'>MARCH 2023</h1>
                         <span className='text-white'>{count}</span>
+                            {cascadeBreakdown.map((breakdown,index) => {
+                                return (
+                                    <div key={index}>
+                                        <h2 className='text-white'>name: {breakdown.name}</h2>
+                                        <h2 className='text-white'>value: {breakdown.waste}</h2>
+                                    </div>
+                                )
+                            })}
                     </div>
                     <div>
                         <ChevronRightIcon className='w-10 h-10 text-white' strokeWidth={3} onClick={nextMonth}/>
