@@ -83,6 +83,7 @@ function PieCharts() {
                     <div>
                         <h1 className='text-3xl font-semibold text-white'>MARCH 2023</h1>
                         <span className='text-white'>{count}</span>
+                        {/* Delete before production */}
                             {cascadeBreakdown.map((breakdown,index) => {
                                 return (
                                     <div key={index}>
