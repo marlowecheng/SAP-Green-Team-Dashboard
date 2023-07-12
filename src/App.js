@@ -46,11 +46,6 @@ export default () => (
       <Test />
     </div>
 
-    <div>
-      {/* @NOTE: REMOVE THIS PLEASE */}
-      <TestData />
-    </div>
-
     {/* WHATS NEW SECTION */}
     {/* <h1
       className='text-xl'
