@@ -5,7 +5,7 @@ import coffeeGrounds from '../assets/coffee-grounds.png';
 
 import data from '../data/monthlyData2023.json';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
-import TestData from './TestPage';
+
 
 function PieCharts() {
 
@@ -19,10 +19,15 @@ function PieCharts() {
     function prevMonth() {
         // For loop to iterate over the array 
         const result = [];
-            for (let i = 0; i < data.YEAR2023.length; i--) {
-                result.push(<li>{data.YEAR2023.month}</li>)
-                }
-        }
+
+        // result.items.forEach(item => {
+        //     item.data.forEach(d => results.push)
+        // })
+
+        for (let i = 0; i < data.YEAR2023; i--) {
+            result.map(<li>{data.YEAR2023.month}</li>)
+            }
+    }
 
     function nextMonth() {
         setCount(count + 1);
@@ -84,7 +89,7 @@ function PieCharts() {
                         <h1 className='text-3xl font-semibold text-white'>MARCH 2023</h1>
                         <span className='text-white'>{count}</span>
                         {/* Delete before production */}
-                            {cascadeBreakdown.map((breakdown,index) => {
+                            {cascadeBreakdown.map((breakdown, index) => {
                                 return (
                                     <div key={index}>
                                         <h2 className='text-white'>name: {breakdown.name}</h2>
@@ -98,7 +103,6 @@ function PieCharts() {
                     </div>
                 </div>
             </div>
-            <TestData month={count} />
             <div className='flex justify-center items-center bg-bgmain pt-12'>
                 <Card className='max-w-md m-2'>
                     <div>

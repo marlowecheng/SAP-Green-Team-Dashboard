@@ -12,10 +12,8 @@ import WasteDiversion from "./components/WasteDiversion";
 import MonthlyChange from "./components/MonthlyChange";
 import InfoCards from "./components/InfoCards";
 import NewsSection from "./components/NewsSection";
-import Test from "./test/test";
 
 import Slider from "./components/SwitchMonths";
-import TestData from "./components/TestPage";
 
 export default () => (
   <div>
@@ -39,11 +37,6 @@ export default () => (
     <div>
       <PieCharts />
       {/* <MonthlyChange /> */}
-    </div>
-
-    <div>
-      {/* @NOTE: REMOVE THIS PLEASE */}
-      <Test />
     </div>
 
     {/* WHATS NEW SECTION */}
