@@ -5,7 +5,7 @@ import coffeeGrounds from '../assets/coffee-grounds.png';
 
 import data from '../data/monthlyData2023.json';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
-import TestData from './TestPage';
+
 
 function PieCharts() {
 
@@ -97,7 +97,6 @@ function PieCharts() {
                     </div>
                 </div>
             </div>
-            <TestData month={count} />
             <div className='flex justify-center items-center bg-bgmain pt-12'>
                 <Card className='max-w-md m-2'>
                     <div>
