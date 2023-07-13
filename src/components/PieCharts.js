@@ -24,9 +24,9 @@ function PieCharts() {
         //     item.data.forEach(d => results.push)
         // })
 
-        for (let i = 0; i < data.YEAR2023; i--) {
+        for (let i = 0; i < data.YEAR2023[0]; i--) {
             result.map(<li>{data.YEAR2023.month}</li>)
-            }
+        }
     }
 
     function nextMonth() {
