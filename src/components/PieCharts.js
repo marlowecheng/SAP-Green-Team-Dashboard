@@ -19,10 +19,15 @@ function PieCharts() {
     function prevMonth() {
         // For loop to iterate over the array 
         const result = [];
-            for (let i = 0; i < data.YEAR2023.length; i--) {
-                result.push(<li>{data.YEAR2023.month}</li>)
-                }
+
+        // result.items.forEach(item => {
+        //     item.data.forEach(d => results.push)
+        // })
+
+        for (let i = 0; i < data.YEAR2023[0]; i--) {
+            result.map(<li>{data.YEAR2023.month}</li>)
         }
+    }
 
     function nextMonth() {
         setCount(count + 1);
@@ -83,7 +88,8 @@ function PieCharts() {
                     <div>
                         <h1 className='text-3xl font-semibold text-white'>MARCH 2023</h1>
                         <span className='text-white'>{count}</span>
-                            {cascadeBreakdown.map((breakdown,index) => {
+                        {/* Delete before production */}
+                            {cascadeBreakdown.map((breakdown, index) => {
                                 return (
                                     <div key={index}>
                                         <h2 className='text-white'>name: {breakdown.name}</h2>
