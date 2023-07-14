@@ -10,7 +10,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 function PieCharts() {
 
     // const [count, setCount] = useState('');
-    const [month, setMonth] = useState('')
+    const [month, setMonth] = useState(0)
     
     // 1. Make left and Right Arrows clickable 
     // 2. After one is clicked, it should update the data dependent on the month 
@@ -25,30 +25,34 @@ function PieCharts() {
         //     item.data.forEach(d => results.push)
         // })
 
-        // for (let i = 0; i < data.YEAR2023[0]; i--) {
-        //     result.map(<li>{data.YEAR2023.month}</li>)
-        // }
-
-        if (month) {
-            if (month < 0) {
-                setMonth(month - 1) 
-            } else {
-                setMonth(0)
-            }
+        for (let i = 0; i < data.YEAR2023[0]; i--) {
+            result.map(<li>{data.YEAR2023[0].month}</li>)
         }
+        
+        console.log(data.YEAR2023[0].month)
+    
+
+        // if (month) {
+        //     if (month <= data.YEAR2023[0]) {
+        //         setMonth(month - 1)
+        //     } 
+        //     else {
+        //         setMonth(0)
+        //     }
+        // }   
+        
     }
 
     function nextMonth() {
         // setCount(count + 1);
-        if (month) {
-            if (month > 0) {
-                setMonth(month + 1) 
-            } else {
-                setMonth(0)
-            }
-        }
-
-
+        // if (month) {
+        //     if (month >= 0) {
+        //         setMonth(month--) 
+        //     } 
+        //     else {
+        //         setMonth(0)
+        //     }
+        // }
     }
 
     const monthlyTotalWaste = [
