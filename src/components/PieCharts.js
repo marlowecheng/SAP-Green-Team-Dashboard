@@ -7,7 +7,7 @@ import data from '../data/monthlyData2023.json';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 
-function PieCharts() {
+function PieCharts( { displayMonth } ) {
 
     // const [count, setCount] = useState('');
     const [month, setMonth] = useState(0)
@@ -53,50 +53,64 @@ function PieCharts() {
         // }
     }
 
+    // Data Filtering
+    // Gets the array of data based on month inputted
+    const filteredData = data.YEAR2023.filter((item) => item.month === displayMonth);
+
+    // Returns an error if data does not exist
+    // if (filteredData.length === 0) {
+    //   return <div>No data available for {displayMonth}</div>;
+    // }
+    
+    // The array of inputted month is stored in monthData for calling nestled array items
+    const monthData = filteredData[0];
+
     const monthlyTotalWaste = [
         {
             name: "Organics",
-            waste: data.YEAR2023[4].coffeeGrounds
+            waste: monthData.coffeeGrounds
         },
         {
             name: "Waste Control Services",
-            waste: data.YEAR2023[4].garbage
+            waste: monthData.garbage
         },
         {
           name: "Cascade Recovery",
-          waste: data.YEAR2023[4].rigidsNonRefundable
+          waste: monthData.rigidsNonRefundable
         }, 
       ]
     
     const cascadeBreakdown = [
         {
             name: "Mixed Paper",
-            waste: data.YEAR2023[4].mixedPaperFiber
+            waste: monthData.mixedPaperFiber
         },  
         {
             name: "Confidential Paper",
-            waste: data.YEAR2023[4].confidentialPaper
+            waste: monthData.confidentialPaper
         },
         {
             name: "Garbage",
-            waste: data.YEAR2023[4].garbage
+            waste: monthData.garbage
         },
         {
             name: "Non refundables",
-            waste: data.YEAR2023[4].coffeeGrounds
+            waste: monthData.coffeeGrounds
         },
     ];
     
     const organicsBreakdown = [ 
         {
             name: "Coffee",
-            waste: data.YEAR2023[4].coffeeGrounds
+            waste: monthData.coffeeGrounds
         },
         {
             name: "Organics",
-            waste: data.YEAR2023[4].rigidsNonRefundable
+            waste: monthData.rigidsNonRefundable
         }
     ];
+
+    // 
 
     return (
         <div>
