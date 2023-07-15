@@ -18,12 +18,6 @@ export default () => (
     <Header />
     <Banner />
 
-    <div>
-      <DataTest 
-        displayMonth="january"
-      />
-    </div>
-
     <div className="flex flex-row items-center justify-evenly m-10">
       {/* Office Presence Card */}
       <OfficePresence />
@@ -40,7 +34,7 @@ export default () => (
     {/* MONTHLY CHANGE SECTION */}
     <div>
       <PieCharts 
-        // !NOTE: To change the month displayed, replace the "" with desired month
+        // !NOTE: To change the month displayed on first load, replace the "" with desired month
         displayMonth="may"
       />
       {/* <MonthlyChange /> */}
