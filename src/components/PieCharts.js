@@ -9,131 +9,100 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 function PieCharts( { displayMonth } ) {
 
-    // const [count, setCount] = useState('');
-    const [month, setMonth] = useState(0)
-    
-    // 1. Make left and Right Arrows clickable 
-    // 2. After one is clicked, it should update the data dependent on the month 
-    // 3. Display the data that correlated to the month which in this case would be may and july 
-    // 4. Be able to switch back and forth between months 
+    // Change Display Data Based on the Month Selected
+    // Initial state is the passed-in month prop - displayMonth
+    // Whenever setSelectedMonth is run, it will update the selectedMonth variable
+    const [selectedMonth, setSelectedMonth] = useState(displayMonth);
 
-    function prevMonth() {
-        // For loop to iterate over the array 
-        const result = [];
+    // Handler for when the left chevron arrow is clicked
+    const viewPrevMonth = () => {
+        // Goes through the JSON and maps out the months in the order entered
+        const monthList = data.YEAR2023.map(item => item.month);
 
-        // result.items.forEach(item => {
-        //     item.data.forEach(d => results.push)
-        // })
+        // Using the list of months, indexOf returns the first instance of the selected month
+        const selectedMonthIndex = monthList.indexOf(selectedMonth);
 
-        for (let i = 0; i < data; i++) {
-            result.map(<li>{data.YEAR2023.month}</li>)
-        }
-        
-        console.log(data.YEAR2023[0].month)
+        // If the current index is greater than the first index (january), then minus 1 (goes back a month)
+        if(selectedMonthIndex > 0) {
+            setSelectedMonth(monthList[selectedMonthIndex - 1]);
+        };
 
-    }
+    };
 
-    function nextMonth() {
+    // Handler for when the right chevron arrow is clicked
+    const viewNextMonth = () => {
+        const monthList = data.YEAR2023.map(item => item.month);
+        const selectedMonthIndex = monthList.indexOf(selectedMonth);
 
-        const result = [];
-
-        for (let i = 0; i < data.YEAR2023; i++) {
-            result.map(<li>{data.YEAR2023.id}</li>)
-        }
-
-        console.log(result)
-        // setCount(count + 1);
-        // if (month) {
-        //     if (month >= 0) {
-        //         setMonth(month--) 
-        //     } 
-        //     else {
-        //         setMonth(0)
-        //     }
-        // }
-    }
+        // If the current index is lesser than the first index (january), then plus 1 (goes forward a month)
+        if(selectedMonthIndex < monthList.length - 1) {
+            setSelectedMonth(monthList[selectedMonthIndex + 1]);
+        };
+    };
 
     // Data Filtering
-    // Gets the array of data based on month inputted
-    const filteredData = data.YEAR2023.filter((item) => item.month === displayMonth);
+    // Gets the array of data based on month selected
+    const filteredData = data.YEAR2023.find((item) => item.month === selectedMonth);
 
-    // Returns an error if data does not exist
-    // if (filteredData.length === 0) {
-    //   return <div>No data available for {displayMonth}</div>;
-    // }
-    
-    // The array of inputted month is stored in monthData for calling nestled array items
-    const monthData = filteredData[0];
-
+    // Make the data readable for Tremor components
     const monthlyTotalWaste = [
         {
             name: "Organics",
-            waste: monthData.coffeeGrounds
+            waste: filteredData.coffeeGrounds
         },
         {
             name: "Waste Control Services",
-            waste: monthData.garbage
+            waste: filteredData.garbage
         },
         {
           name: "Cascade Recovery",
-          waste: monthData.rigidsNonRefundable
+          waste: filteredData.rigidsNonRefundable
         }, 
       ]
     
     const cascadeBreakdown = [
         {
             name: "Mixed Paper",
-            waste: monthData.mixedPaperFiber
+            waste: filteredData.mixedPaperFiber
         },  
         {
             name: "Confidential Paper",
-            waste: monthData.confidentialPaper
+            waste: filteredData.confidentialPaper
         },
         {
             name: "Garbage",
-            waste: monthData.garbage
+            waste: filteredData.garbage
         },
         {
             name: "Non refundables",
-            waste: monthData.coffeeGrounds
+            waste: filteredData.coffeeGrounds
         },
     ];
     
     const organicsBreakdown = [ 
         {
             name: "Coffee",
-            waste: monthData.coffeeGrounds
+            waste: filteredData.coffeeGrounds
         },
         {
             name: "Organics",
-            waste: monthData.rigidsNonRefundable
+            waste: filteredData.rigidsNonRefundable
         }
     ];
 
-    // 
 
     return (
         <div>
             <div className='text-center'>
                 <div className='flex justify-center items-center bg-textmain p-2'>
                     <div>
-                        <ChevronLeftIcon className='w-10 h-10 text-white' strokeWidth={3} onClick={prevMonth}/>
+                        <ChevronLeftIcon className='w-10 h-10 text-white' strokeWidth={3} onClick={viewPrevMonth}/>
                     </div>
                     <div>
-                        <h1 className='text-3xl font-semibold text-white'>MARCH 2023</h1>
-                        <span className='text-white'>{month}</span>
-                        {/* Delete before production */}
-                            {cascadeBreakdown.map((breakdown, index) => {
-                                return (
-                                    <div key={index}>
-                                        <h2 className='text-white'>name: {breakdown.name}</h2>
-                                        <h2 className='text-white'>value: {breakdown.waste}</h2>
-                                    </div>
-                                )
-                            })}
+                        <h1 className='text-3xl font-semibold text-white'>{ selectedMonth.toUpperCase() } {(new Date().getFullYear())} </h1>
                     </div>
                     <div>
-                        <ChevronRightIcon className='w-10 h-10 text-white' strokeWidth={3} onClick={nextMonth}/>
+                        <ChevronRightIcon className='w-10 h-10 text-white' strokeWidth={3} onClick={viewNextMonth}/>
                     </div>
                 </div>
             </div>
