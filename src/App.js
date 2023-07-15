@@ -8,7 +8,6 @@ import Banner from "./components/Banner";
 import OfficePresence from "./components/OfficePresence";
 import PieCharts from "./components/PieCharts";
 import WasteDiversion from "./components/WasteDiversion";
-import MonthlyChange from "./components/MonthlyChange";
 import InfoCards from "./components/InfoCards";
 import NewsSection from "./components/NewsSection";
 import DataTest from "./components/DataTest";
