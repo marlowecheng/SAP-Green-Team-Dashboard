@@ -43,7 +43,8 @@ export default () => (
     {/* MONTHLY CHANGE SECTION */}
     <div>
       <PieCharts 
-        displayMonth="january"
+        // !NOTE: To change the month displayed, replace the "" with desired month
+        displayMonth="may"
       />
       {/* <MonthlyChange /> */}
     </div>

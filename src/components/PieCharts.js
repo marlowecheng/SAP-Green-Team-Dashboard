@@ -7,7 +7,7 @@ import data from '../data/monthlyData2023.json';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 
-function PieCharts() {
+function PieCharts( { displayMonth } ) {
 
     const [count, setCount] = useState('');
     
@@ -16,7 +16,81 @@ function PieCharts() {
     // 3. Display the data that correlated to the month which in this case would be may and july 
     // 4. Be able to switch back and forth between months 
 
- 
+    function prevMonth() {
+        // For loop to iterate over the array 
+        const result = [];
+
+        // result.items.forEach(item => {
+        //     item.data.forEach(d => results.push)
+        // })
+
+        for (let i = 0; i < data.YEAR2023[0]; i--) {
+            result.map(<li>{data.YEAR2023.month}</li>)
+        }
+    }
+
+    function nextMonth() {
+        setCount(count + 1);
+    }
+
+    // Data Filtering
+    // Gets the array of data based on month inputted
+    const filteredData = data.YEAR2023.filter((item) => item.month === displayMonth);
+
+    // Returns an error if data does not exist
+    // if (filteredData.length === 0) {
+    //   return <div>No data available for {displayMonth}</div>;
+    // }
+    
+    // The array of inputted month is stored in monthData for calling nestled array items
+    const monthData = filteredData[0];
+
+    const monthlyTotalWaste = [
+        {
+            name: "Organics",
+            waste: monthData.coffeeGrounds
+        },
+        {
+            name: "Waste Control Services",
+            waste: monthData.garbage
+        },
+        {
+          name: "Cascade Recovery",
+          waste: monthData.rigidsNonRefundable
+        }, 
+      ]
+    
+    const cascadeBreakdown = [
+        {
+            name: "Mixed Paper",
+            waste: monthData.mixedPaperFiber
+        },  
+        {
+            name: "Confidential Paper",
+            waste: monthData.confidentialPaper
+        },
+        {
+            name: "Garbage",
+            waste: monthData.garbage
+        },
+        {
+            name: "Non refundables",
+            waste: monthData.coffeeGrounds
+        },
+    ];
+    
+    const organicsBreakdown = [ 
+        {
+            name: "Coffee",
+            waste: monthData.coffeeGrounds
+        },
+        {
+            name: "Organics",
+            waste: monthData.rigidsNonRefundable
+        }
+    ];
+
+    // 
 
     return (
         <div>
