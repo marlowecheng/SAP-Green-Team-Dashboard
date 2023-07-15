@@ -106,27 +106,6 @@
 			"diverted": 0.93
         },
 		{
-			"id": 5,
-            "month": "may",
-			"rigidsNonRefundable": 118,
-			"mixedPaperFiber": 135,
-			"confidentialPaper": 0,
-			"compost": 806,
-			"coffeeGrounds": 98,
-			"eWasteDesktop": 3666,
-			"eWasteDataCentre": 0,
-			"itDonations": 0,
-			"furnitureAndMisc": 0,
-			"pensHighlighter": 0,
-			"batteriesCD": 0,
-			"metalWoodPaint": 0,
-			"tubesBulbs": 0,
-			"tonerCartridges": 0,
-			"garbage": 340,
-			"total": 5163,
-			"diverted": 0.93
-        },
-		{
 			"id": 6,
             "month": "june",
 			"rigidsNonRefundable": 0,
