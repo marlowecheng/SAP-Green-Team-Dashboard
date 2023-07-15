@@ -25,25 +25,23 @@ function PieCharts() {
         //     item.data.forEach(d => results.push)
         // })
 
-        for (let i = 0; i < data.YEAR2023[0]; i--) {
-            result.map(<li>{data.YEAR2023[0].month}</li>)
+        for (let i = 0; i < data; i++) {
+            result.map(<li>{data.YEAR2023.month}</li>)
         }
         
         console.log(data.YEAR2023[0].month)
-    
 
-        // if (month) {
-        //     if (month <= data.YEAR2023[0]) {
-        //         setMonth(month - 1)
-        //     } 
-        //     else {
-        //         setMonth(0)
-        //     }
-        // }   
-        
     }
 
     function nextMonth() {
+
+        const result = [];
+
+        for (let i = 0; i < data.YEAR2023; i++) {
+            result.map(<li>{data.YEAR2023.id}</li>)
+        }
+
+        console.log(result)
         // setCount(count + 1);
         // if (month) {
         //     if (month >= 0) {
