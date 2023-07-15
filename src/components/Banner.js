@@ -28,7 +28,7 @@ import greensodaCan from "../assets/tall-green-soda-can.svg";
 
 function Banner() {
 
-
+  
 
   return (
     <div className="bg-bgmain py-4 flex justify-around border-b-[60px] border-textmain">
