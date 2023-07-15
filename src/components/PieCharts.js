@@ -16,67 +16,7 @@ function PieCharts() {
     // 3. Display the data that correlated to the month which in this case would be may and july 
     // 4. Be able to switch back and forth between months 
 
-    function prevMonth() {
-        // For loop to iterate over the array 
-        const result = [];
-
-        // result.items.forEach(item => {
-        //     item.data.forEach(d => results.push)
-        // })
-
-        for (let i = 0; i < data.YEAR2023[0]; i--) {
-            result.map(<li>{data.YEAR2023.month}</li>)
-        }
-    }
-
-    function nextMonth() {
-        setCount(count + 1);
-    }
-
-    const monthlyTotalWaste = [
-        {
-            name: "Organics",
-            waste: data.YEAR2023[4].coffeeGrounds
-        },
-        {
-            name: "Waste Control Services",
-            waste: data.YEAR2023[4].garbage
-        },
-        {
-          name: "Cascade Recovery",
-          waste: data.YEAR2023[4].rigidsNonRefundable
-        }, 
-      ]
-    
-    const cascadeBreakdown = [
-        {
-            name: "Mixed Paper",
-            waste: data.YEAR2023[4].mixedPaperFiber
-        },  
-        {
-            name: "Confidential Paper",
-            waste: data.YEAR2023[4].confidentialPaper
-        },
-        {
-            name: "Garbage",
-            waste: data.YEAR2023[4].garbage
-        },
-        {
-            name: "Non refundables",
-            waste: data.YEAR2023[4].coffeeGrounds
-        },
-    ];
-    
-    const organicsBreakdown = [ 
-        {
-            name: "Coffee",
-            waste: data.YEAR2023[4].coffeeGrounds
-        },
-        {
-            name: "Organics",
-            waste: data.YEAR2023[4].rigidsNonRefundable
-        }
-    ];
+ 
 
     return (
         <div>
