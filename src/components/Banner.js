@@ -27,6 +27,9 @@ import greensodaCan from "../assets/tall-green-soda-can.svg";
 
 
 function Banner() {
+
+
+
   return (
     <div className="bg-bgmain py-4 flex justify-around border-b-[60px] border-textmain">
       <div className="flex flex-col">
@@ -39,6 +42,7 @@ function Banner() {
       </div>
 
       <div classname="flex flex-row">
+        
         <div className="flex flex-row my-4 gap-x-6">
           {/* Hero Card Cascade Recovery */}
           <Card className="w-[255px] flex flex-col items-center border-cascadeBorder border-[5px] drop-shadow-xl">
@@ -75,6 +79,8 @@ function Banner() {
               <p className="font-bold text-lg text-green-900">45%</p>
             </div>
           </Card>
+
+
           {/* Hero Card Eco Action */}
           <Card className="w-[255px] flex flex-col items-center border-ecoBorder border-[5px] drop-shadow-xl">
             <h1 className="text-textmain font-bold">Eco Action</h1>
@@ -148,6 +154,7 @@ function Banner() {
               <p className="font-bold text-lg text-red-900">45%</p>
             </div>
           </Card>
+
           {/* Hero Card refundables */}
           <Card className="w-[255px] flex flex-col items-center border-refundBorder border-[5px] drop-shadow-xl">
             <h1 className="text-textmain font-bold">Refundables</h1>

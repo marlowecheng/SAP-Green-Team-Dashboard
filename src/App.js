@@ -1,6 +1,5 @@
 import "./style/App.css";
-import data from "./data/data.json";
-import monthlyData from "./data/monthlyData2023.json";
+import data from "./data/monthlyData2023.json";
 
 import Header from "./layouts/Header";
 import Footer from "./layouts/Footer";
@@ -12,13 +11,21 @@ import WasteDiversion from "./components/WasteDiversion";
 import MonthlyChange from "./components/MonthlyChange";
 import InfoCards from "./components/InfoCards";
 import NewsSection from "./components/NewsSection";
+import DataTest from "./components/DataTest";
 
 import Slider from "./components/SwitchMonths";
+
 
 export default () => (
   <div>
     <Header />
     <Banner />
+
+    <div>
+      <DataTest 
+        displayMonth="january"
+      />
+    </div>
 
     <div className="flex flex-row items-center justify-evenly m-10">
       {/* Office Presence Card */}
@@ -35,7 +42,10 @@ export default () => (
 
     {/* MONTHLY CHANGE SECTION */}
     <div>
-      <PieCharts />
+      <PieCharts 
+        // !NOTE: To change the month displayed, replace the "" with desired month
+        displayMonth="may"
+      />
       {/* <MonthlyChange /> */}
     </div>
 
