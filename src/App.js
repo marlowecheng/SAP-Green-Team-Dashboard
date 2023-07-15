@@ -13,8 +13,6 @@ import InfoCards from "./components/InfoCards";
 import NewsSection from "./components/NewsSection";
 import DataTest from "./components/DataTest";
 
-import Slider from "./components/SwitchMonths";
-
 
 export default () => (
   <div>
