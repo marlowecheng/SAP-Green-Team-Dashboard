@@ -4,12 +4,16 @@ import data from '../data/monthlyData2023.json';
 
 function WasteDiversion({displayMonth}) {
 
+	// Filters the array based on the month passed in via displayMonth
 	const filteredData = data.YEAR2023.filter((item) => item.month === displayMonth);
 
+	// Selects the first instance of the array based the month passed in
 	const monthData = filteredData[0];
 
+	// Convert diverted data into a number and times by 100
 	const divertedData = Number(monthData.diverted) * 100;
 
+	// Make data Tremor-friendly
 	const recycling = [
         {
             name: "Diversion",
