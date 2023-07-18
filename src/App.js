@@ -11,6 +11,7 @@ import InfoCards from "./components/InfoCards";
 import NewsSection from "./components/NewsSection";
 
 function App() {
+    
     // !NOTE: To change the month displayed on first load, replace the "" with desired month
     let currMonth = "may";
 

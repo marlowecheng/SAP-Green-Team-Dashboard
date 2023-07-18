@@ -3,7 +3,7 @@
         {
             "id": 1,
             "month": "january",
-            "rigidsNonRefundable": 112,
+            "rigidsRefundableAndNon": 112,
             "mixedPaperFiber": 68,
             "confidentialPaper": 911,
             "compost": 746,
@@ -24,7 +24,7 @@
         {
             "id": 2,
             "month": "february",
-            "rigidsNonRefundable": 144,
+            "rigidsRefundableAndNon": 144,
             "mixedPaperFiber": 162,
             "confidentialPaper": 490,
             "compost": 0,
@@ -45,7 +45,7 @@
         {
             "id": 3,
             "month": "march",
-            "rigidsNonRefundable": 243,
+            "rigidsRefundableAndNon": 243,
             "mixedPaperFiber": 198,
             "confidentialPaper": 154,
             "compost": 761,
@@ -66,7 +66,7 @@
         {
             "id": 4,
             "month": "april",
-            "rigidsNonRefundable": 124,
+            "rigidsRefundableAndNon": 124,
             "mixedPaperFiber": 144,
             "confidentialPaper": 0,
             "compost": 858,
@@ -87,7 +87,7 @@
         {
             "id": 5,
             "month": "may",
-            "rigidsNonRefundable": 118,
+            "rigidsRefundableAndNon": 118,
             "mixedPaperFiber": 135,
             "confidentialPaper": 0,
             "compost": 806,
@@ -108,7 +108,7 @@
         {
             "id": 6,
             "month": "june",
-            "rigidsNonRefundable": 0,
+            "rigidsRefundableAndNon": 0,
             "mixedPaperFiber": 0,
             "confidentialPaper": 0,
             "compost": 0,
@@ -129,7 +129,7 @@
         {
             "id": 7,
             "month": "july",
-            "rigidsNonRefundable": 0,
+            "rigidsRefundableAndNon": 0,
             "mixedPaperFiber": 0,
             "confidentialPaper": 0,
             "compost": 0,
@@ -150,7 +150,7 @@
         {
             "id": 8,
             "month": "august",
-            "rigidsNonRefundable": 0,
+            "rigidsRefundableAndNon": 0,
             "mixedPaperFiber": 0,
             "confidentialPaper": 0,
             "compost": 0,
@@ -171,7 +171,7 @@
         {
             "id": 9,
             "month": "september",
-            "rigidsNonRefundable": 0,
+            "rigidsRefundableAndNon": 0,
             "mixedPaperFiber": 0,
             "confidentialPaper": 0,
             "compost": 0,
@@ -192,7 +192,7 @@
         {
             "id": 10,
             "month": "october",
-            "rigidsNonRefundable": 0,
+            "rigidsRefundableAndNon": 0,
             "mixedPaperFiber": 0,
             "confidentialPaper": 0,
             "compost": 0,
@@ -213,7 +213,7 @@
         {
             "id": 11,
             "month": "november",
-            "rigidsNonRefundable": 0,
+            "rigidsRefundableAndNon": 0,
             "mixedPaperFiber": 0,
             "confidentialPaper": 0,
             "compost": 0,
@@ -234,7 +234,7 @@
         {
             "id": 12,
             "month": "december",
-            "rigidsNonRefundable": 0,
+            "rigidsRefundableAndNon": 0,
             "mixedPaperFiber": 0,
             "confidentialPaper": 0,
             "compost": 0,

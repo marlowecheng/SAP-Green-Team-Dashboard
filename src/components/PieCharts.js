@@ -47,7 +47,7 @@ function PieCharts({ displayMonth }) {
     const monthlyTotalWaste = [
         {
             name: "Organics",
-            waste: filteredData.coffeeGrounds,
+            waste: filteredData.coffeeGrounds + filteredData.compost,
         },
         {
             name: "Waste Control Services",
@@ -55,7 +55,7 @@ function PieCharts({ displayMonth }) {
         },
         {
             name: "Cascade Recovery",
-            waste: filteredData.rigidsNonRefundable,
+            waste: filteredData.rigidsRefundableAndNon + filteredData.mixedPaperFiber + filteredData.confidentialPaper,
         },
     ];
 
@@ -69,12 +69,8 @@ function PieCharts({ displayMonth }) {
             waste: filteredData.confidentialPaper,
         },
         {
-            name: "Garbage",
-            waste: filteredData.garbage,
-        },
-        {
-            name: "Non refundables",
-            waste: filteredData.coffeeGrounds,
+            name: "Refundables & Non-Refundables",
+            waste: filteredData.rigidsRefundableAndNon,
         },
     ];
 
@@ -85,9 +81,18 @@ function PieCharts({ displayMonth }) {
         },
         {
             name: "Organics",
-            waste: filteredData.rigidsNonRefundable,
+            waste: filteredData.compost,
         },
     ];
+
+
+    function DataCheck() {
+        if(filteredData.total === 0) {
+            return (
+                <div className="absolute self-start justify-center top-4 font-medium" >Data does not exist for {selectedMonth.charAt(0).toUpperCase() + selectedMonth.slice(1)} yet.</div>
+            )
+        }
+    }
 
     return (
         <div>
@@ -101,7 +106,7 @@ function PieCharts({ displayMonth }) {
                         />
                     </div>
                     <div>
-                        <h1 className="text-3xl font-semibold text-white">
+                        <h1 className="text-3xl font-semibold text-white w-64">
                             {selectedMonth.toUpperCase()}{" "}
                             {new Date().getFullYear()}{" "}
                         </h1>
@@ -115,7 +120,8 @@ function PieCharts({ displayMonth }) {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-center items-center bg-bgmain pt-12">
+            <div className="flex justify-center items-center bg-bgmain pt-12 relative">
+                <DataCheck />
                 <Card className="max-w-md m-2">
                     <div>
                         <h1 className="font-bold text-textmain text-center text-xl mb-4">
@@ -160,16 +166,11 @@ function PieCharts({ displayMonth }) {
                         className="max-w-sm"
                         data={cascadeBreakdown}
                         category="waste"
-                        colors={["yellow", "blue", "orange", "stone"]}
+                        colors={["yellow", "blue", "orange"]}
                         variant="pie"
                         // valueFormatter={valueFormatter}
                     />
                     <div className="flex flex-wrap gap-x-2 mt-4 ml-10">
-                        <div className="flex m-2 gap-x-2">
-                            <p className="bg-stone w-6 h-6 rounded-full"></p>
-                            <h2 className="font-semibold">Non Refundables</h2>
-                        </div>
-
                         <div className="flex m-2 gap-x-2">
                             <p className="bg-yellow w-6 h-6 rounded-full"></p>
                             <h2 className="font-semibold">Mixed Paper</h2>
@@ -177,13 +178,13 @@ function PieCharts({ displayMonth }) {
 
                         <div className="flex m-2 gap-x-2">
                             <p className="bg-blue-600 w-6 h-6 rounded-full"></p>
-                            <h2 className="font-semibold">Refundables</h2>
+                            <h2 className="font-semibold">Confidential Paper</h2>
                         </div>
 
                         <div className="flex m-2 gap-x-2">
                             <p className="bg-orange w-6 h-6 rounded-full"></p>
                             <h2 className="font-semibold">
-                                Confidential Paper
+                                Refundables & Non-Refundables
                             </h2>
                         </div>
                     </div>
