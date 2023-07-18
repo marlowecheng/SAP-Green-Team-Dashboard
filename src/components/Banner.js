@@ -1,5 +1,5 @@
 import { Card } from "@tremor/react";
-import { ArrowUpIcon, ArrowDownIcon } from "@heroicons/react/24/outline";
+import { ArrowUpIcon, ArrowDownIcon, MinusIcon } from "@heroicons/react/24/outline";
 
 import heroBackground from "../assets/SAPVECTORLOGO-COLOR.svg";
 import paperBag from "../assets/paper-bag.svg";
@@ -24,51 +24,60 @@ import glassBottle from "../assets/glass-water-bottle.svg";
 import greensodaCan from "../assets/tall-green-soda-can.svg";
 
 import data from '../data/monthlyData2023.json';
+import { calcCascadeData, calcEcoData, calcLandfillData, calcRefundablesData } from '../utilities/calcDifferencePercent';
 
 function Banner({ displayMonth }) {
-
-	// Get the array set for the month that is passed in
 	const monthData = data.YEAR2023.find((item) => item.month === displayMonth);
-
-	// Get the index of the current month's array set
 	const currMonthIndex = data.YEAR2023.findIndex((item) => item.month === displayMonth);
-
-	// Get the index of the previous month
 	const prevMonthIndex = currMonthIndex - 1;
 
-	// Get current month's Cascade Recovery data
-	const currCascadeData = monthData.rigidsRefundableAndNon + monthData.mixedPaperFiber + monthData.confidentialPaper;
+	const compareCascadeData = calcCascadeData(monthData, data.YEAR2023[prevMonthIndex]);
+	const compareEcoData = calcEcoData(monthData, data.YEAR2023[prevMonthIndex]);
+	const compareLandfillData = calcLandfillData(monthData, data.YEAR2023[prevMonthIndex]);
+	const compareRefundablesData = calcRefundablesData(monthData, data.YEAR2023[prevMonthIndex]);
 
-	let prevCascadeData = 0;
+	// // Get the array set for the month that is passed in
+	// const monthData = data.YEAR2023.find((item) => item.month === displayMonth);
 
-	if (prevMonthIndex >= 0) {
+	// // Get the index of the current month's array set
+	// const currMonthIndex = data.YEAR2023.findIndex((item) => item.month === displayMonth);
 
-		prevCascadeData += data.YEAR2023[prevMonthIndex].rigidsRefundableAndNon;
+	// // Get the index of the previous month
+	// const prevMonthIndex = currMonthIndex - 1;
 
-		console.log("1: " + prevCascadeData);
+	// // ======= Cascade Recovery Data ========
+	// // Get current month's Cascade Recovery data
+	// const currCascadeData = monthData.rigidsRefundableAndNon + monthData.mixedPaperFiber + monthData.confidentialPaper;
 
-		prevCascadeData += data.YEAR2023[prevMonthIndex].mixedPaperFiber;
+	// // Get previous month's Cascade Recovery data
+	// let prevCascadeData = data.YEAR2023[prevMonthIndex].rigidsRefundableAndNon + data.YEAR2023[prevMonthIndex].mixedPaperFiber + data.YEAR2023[prevMonthIndex].confidentialPaper;
 
-		console.log("2: " + prevCascadeData);
+	// // Calculate the difference in percentage
+	// const compareCascadeData = parseFloat(((currCascadeData - prevCascadeData) / currCascadeData) * 100).toFixed(1);
 
-		prevCascadeData += data.YEAR2023[prevMonthIndex].confidentialPaper;
+	// // ======= Eco Action Data ========
+	// // Get current month's EcoAction data
+	// const currEcoData = monthData.coffeeGrounds + monthData.compost;
 
-		console.log("3: " + prevCascadeData);
-	}
+	// // Get previous month's EcoAction data
+	// let prevEcoData = data.YEAR2023[prevMonthIndex].coffeeGrounds + data.YEAR2023[prevMonthIndex].compost;
 
-	const compareCascadeData = parseFloat(((currCascadeData - prevCascadeData) / currCascadeData) * 100).toFixed(1);
+	// // Calculate the difference in percentage
+	// const compareEcoData = parseFloat(((currEcoData - prevEcoData) / currEcoData) * 100).toFixed(1);
 
-	console.log('cascade data comparison: ' + compareCascadeData);
+	// // ======= Waste Control Services Data ========
+	// const currLandfillData = monthData.garbage;
 
-	// Get current month's EcoAction data
-	const currEcoData = monthData.coffeeGrounds + monthData.compost;
+	// let prevLandfillData = data.YEAR2023[prevMonthIndex].garbage;
 
-	//let prevEcoData = monthData[prevMonthIndex].coffeeGrounds + monthData[prevMonthIndex].compost;
+	// const compareLandfillData = parseFloat(((currLandfillData - prevLandfillData) / currLandfillData) * 100).toFixed(1);
 
-	// Get current month's Waste Control Services data
-	const currLandfillData = monthData.garbage;
+	// // ======= Refundables Data ========
+	// const currRefundablesData = monthData.rigidsRefundableAndNon;
 
-	// let prevLandfillData = monthData[prevMonthIndex].garbage;
+	// let prevRefundablesData = data.YEAR2023[prevMonthIndex].rigidsRefundableAndNon;
+
+	// const compareRefundablesData = parseFloat(((currRefundablesData - prevRefundablesData) / currRefundablesData) * 100).toFixed(1);
 
     return (
         <div className="bg-bgmain py-4 flex justify-around border-b-[60px] border-textmain">
@@ -80,7 +89,8 @@ function Banner({ displayMonth }) {
                     />
                 </div>
             </div>
-
+			
+			
             <div classname="flex flex-row">
                 <div className="flex flex-row my-4 gap-x-6">
                     {/* Hero Card Cascade Recovery */}
@@ -131,6 +141,14 @@ function Banner({ displayMonth }) {
                             </p>
                         </div>
 						)}
+						{compareCascadeData == 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgGrey bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+                            <MinusIcon className="pillTextGrey stroke-[3px] w-6 h-6" />
+                            <p className="font-bold text-lg pillTextGrey">
+                                {Math.abs(compareCascadeData)}%
+                            </p>
+                        </div>
+						)}
                     </Card>
 
                     {/* Hero Card Eco Action */}
@@ -163,12 +181,30 @@ function Banner({ displayMonth }) {
                                 title="Apple Core"
                             />
                         </div>
-                        <div className="w-32 h-12 rounded-full bg-pillBgGreen bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+						{compareEcoData > 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgGreen bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
                             <ArrowUpIcon className="text-green-900 stroke-[3px] w-6 h-6" />
                             <p className="font-bold text-lg text-green-900">
-                                45%
+								{Math.abs(compareEcoData)}%
                             </p>
                         </div>
+						)}
+						{compareEcoData < 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgRed bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+                            <ArrowDownIcon className="text-red-900 stroke-[3px] w-6 h-6" />
+                            <p className="font-bold text-lg text-red-900">
+                                {Math.abs(compareEcoData)}%
+                            </p>
+                        </div>
+						)}
+						{compareEcoData == 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgGrey bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+                            <MinusIcon className="pillTextGrey stroke-[3px] w-6 h-6" />
+                            <p className="font-bold text-lg pillTextGrey">
+                                {Math.abs(compareEcoData)}%
+                            </p>
+                        </div>
+						)}
                     </Card>
                 </div>
 
@@ -205,12 +241,30 @@ function Banner({ displayMonth }) {
                                 title="Medical Mask"
                             />
                         </div>
-                        <div className="w-32 h-12 rounded-full bg-pillBgRed bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
-                            <ArrowDownIcon className="text-red-900 stroke-[3px] w-6 h-6" />
-                            <p className="font-bold text-lg text-red-900">
-                                45%
+                        {compareLandfillData > 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgGreen bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+                            <ArrowUpIcon className="text-green-900 stroke-[3px] w-6 h-6" />
+                            <p className="font-bold text-lg text-green-900">
+								{Math.abs(compareLandfillData)}%
                             </p>
                         </div>
+						)}
+						{compareLandfillData < 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgRed bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+                            <ArrowDownIcon className="text-red-900 stroke-[3px] w-6 h-6" />
+                            <p className="font-bold text-lg text-red-900">
+                                {Math.abs(compareLandfillData)}%
+                            </p>
+                        </div>
+						)}
+						{compareLandfillData == 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgGrey bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+                            <MinusIcon className="pillTextGrey stroke-[3px] w-6 h-6" />
+                            <p className="font-bold text-lg pillTextGrey">
+                                {Math.abs(compareLandfillData)}%
+                            </p>
+                        </div>
+						)}
                     </Card>
 
                     {/* Hero Card refundables */}
@@ -243,12 +297,30 @@ function Banner({ displayMonth }) {
                                 title="Green Soda Can"
                             />
                         </div>
-                        <div className="w-32 h-12 rounded-full bg-pillBgGreen bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+                        {compareRefundablesData > 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgGreen bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
                             <ArrowUpIcon className="text-green-900 stroke-[3px] w-6 h-6" />
                             <p className="font-bold text-lg text-green-900">
-                                45%
+								{Math.abs(compareRefundablesData)}%
                             </p>
                         </div>
+						)}
+						{compareRefundablesData < 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgRed bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+                            <ArrowDownIcon className="text-red-900 stroke-[3px] w-6 h-6" />
+                            <p className="font-bold text-lg text-red-900">
+                                {Math.abs(compareRefundablesData)}%
+                            </p>
+                        </div>
+						)}
+						{compareRefundablesData == 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgGrey bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+                            <MinusIcon className="pillTextGrey stroke-[3px] w-6 h-6" />
+                            <p className="font-bold text-lg pillTextGrey">
+                                {Math.abs(compareRefundablesData)}%
+                            </p>
+                        </div>
+						)}
                     </Card>
                 </div>
             </div>

@@ -22,6 +22,8 @@ module.exports = withMT({
       'pillBgRed': '#E25E5E',
       'pillTextGreen': '#2E602F',
       'pillTextRed': '#DF4834',
+      'pillBgGrey': '#6B7280',
+      'pillTextGrey': '#343333',
       'ecoActionBg': '#557445',
       'wasteBg': '#343333',
       'refundableBg': '#1847C0',
