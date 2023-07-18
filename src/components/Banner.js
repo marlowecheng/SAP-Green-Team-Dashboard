@@ -27,12 +27,48 @@ import data from '../data/monthlyData2023.json';
 
 function Banner({ displayMonth }) {
 
+	// Get the array set for the month that is passed in
 	const monthData = data.YEAR2023.find((item) => item.month === displayMonth);
 
-	const cascadesRecovery = monthData.rigidsRefundableAndNon + monthData.confidentialPaper;
+	// Get the index of the current month's array set
+	const currMonthIndex = data.YEAR2023.findIndex((item) => item.month === displayMonth);
 
-	console.log(cascadesRecovery);
+	// Get the index of the previous month
+	const prevMonthIndex = currMonthIndex - 1;
 
+	// Get current month's Cascade Recovery data
+	const currCascadeData = monthData.rigidsRefundableAndNon + monthData.mixedPaperFiber + monthData.confidentialPaper;
+
+	let prevCascadeData = 0;
+
+	if (prevMonthIndex >= 0) {
+
+		prevCascadeData += data.YEAR2023[prevMonthIndex].rigidsRefundableAndNon;
+
+		console.log("1: " + prevCascadeData);
+
+		prevCascadeData += data.YEAR2023[prevMonthIndex].mixedPaperFiber;
+
+		console.log("2: " + prevCascadeData);
+
+		prevCascadeData += data.YEAR2023[prevMonthIndex].confidentialPaper;
+
+		console.log("3: " + prevCascadeData);
+	}
+
+	const compareCascadeData = parseFloat(((currCascadeData - prevCascadeData) / currCascadeData) * 100).toFixed(1);
+
+	console.log('cascade data comparison: ' + compareCascadeData);
+
+	// Get current month's EcoAction data
+	const currEcoData = monthData.coffeeGrounds + monthData.compost;
+
+	//let prevEcoData = monthData[prevMonthIndex].coffeeGrounds + monthData[prevMonthIndex].compost;
+
+	// Get current month's Waste Control Services data
+	const currLandfillData = monthData.garbage;
+
+	// let prevLandfillData = monthData[prevMonthIndex].garbage;
 
     return (
         <div className="bg-bgmain py-4 flex justify-around border-b-[60px] border-textmain">
@@ -79,12 +115,22 @@ function Banner({ displayMonth }) {
                                 title="Broken Glass"
                             />
                         </div>
-                        <div className="w-32 h-12 rounded-full bg-pillBgGreen bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+						{compareCascadeData > 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgGreen bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
                             <ArrowUpIcon className="text-green-900 stroke-[3px] w-6 h-6" />
                             <p className="font-bold text-lg text-green-900">
-                                45%
+								{Math.abs(compareCascadeData)}%
                             </p>
                         </div>
+						)}
+						{compareCascadeData < 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgRed bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+                            <ArrowDownIcon className="text-red-900 stroke-[3px] w-6 h-6" />
+                            <p className="font-bold text-lg text-red-900">
+                                {Math.abs(compareCascadeData)}%
+                            </p>
+                        </div>
+						)}
                     </Card>
 
                     {/* Hero Card Eco Action */}
