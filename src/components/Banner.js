@@ -36,49 +36,6 @@ function Banner({ displayMonth }) {
 	const compareLandfillData = calcLandfillData(monthData, data.YEAR2023[prevMonthIndex]);
 	const compareRefundablesData = calcRefundablesData(monthData, data.YEAR2023[prevMonthIndex]);
 
-	// // Get the array set for the month that is passed in
-	// const monthData = data.YEAR2023.find((item) => item.month === displayMonth);
-
-	// // Get the index of the current month's array set
-	// const currMonthIndex = data.YEAR2023.findIndex((item) => item.month === displayMonth);
-
-	// // Get the index of the previous month
-	// const prevMonthIndex = currMonthIndex - 1;
-
-	// // ======= Cascade Recovery Data ========
-	// // Get current month's Cascade Recovery data
-	// const currCascadeData = monthData.rigidsRefundableAndNon + monthData.mixedPaperFiber + monthData.confidentialPaper;
-
-	// // Get previous month's Cascade Recovery data
-	// let prevCascadeData = data.YEAR2023[prevMonthIndex].rigidsRefundableAndNon + data.YEAR2023[prevMonthIndex].mixedPaperFiber + data.YEAR2023[prevMonthIndex].confidentialPaper;
-
-	// // Calculate the difference in percentage
-	// const compareCascadeData = parseFloat(((currCascadeData - prevCascadeData) / currCascadeData) * 100).toFixed(1);
-
-	// // ======= Eco Action Data ========
-	// // Get current month's EcoAction data
-	// const currEcoData = monthData.coffeeGrounds + monthData.compost;
-
-	// // Get previous month's EcoAction data
-	// let prevEcoData = data.YEAR2023[prevMonthIndex].coffeeGrounds + data.YEAR2023[prevMonthIndex].compost;
-
-	// // Calculate the difference in percentage
-	// const compareEcoData = parseFloat(((currEcoData - prevEcoData) / currEcoData) * 100).toFixed(1);
-
-	// // ======= Waste Control Services Data ========
-	// const currLandfillData = monthData.garbage;
-
-	// let prevLandfillData = data.YEAR2023[prevMonthIndex].garbage;
-
-	// const compareLandfillData = parseFloat(((currLandfillData - prevLandfillData) / currLandfillData) * 100).toFixed(1);
-
-	// // ======= Refundables Data ========
-	// const currRefundablesData = monthData.rigidsRefundableAndNon;
-
-	// let prevRefundablesData = data.YEAR2023[prevMonthIndex].rigidsRefundableAndNon;
-
-	// const compareRefundablesData = parseFloat(((currRefundablesData - prevRefundablesData) / currRefundablesData) * 100).toFixed(1);
-
     return (
         <div className="bg-bgmain py-4 flex justify-around border-b-[60px] border-textmain">
             <div className="flex flex-col">
