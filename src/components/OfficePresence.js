@@ -9,7 +9,7 @@ function OfficePresence({ displayMonth }) {
 	// Find the array set that matches with the month passed in
 	const currMonthData = employeePresenceData.EMPLOYEE.find((item) => item.month === displayMonth);
 
-	// Get the value of 'count' key
+	// Get the value of 'count' key or the employee count
 	const currMonthCount = currMonthData.count;
 
 	// Get the index number of the current array set
@@ -27,7 +27,7 @@ function OfficePresence({ displayMonth }) {
 	};
 
 	// Calculate the difference between the two months and output as a percentage
-	const presencePercentage = Math.round(((currMonthCount - prevMonthCount) / currMonthCount) * 100);
+	const presencePercentage = parseFloat(((currMonthCount - prevMonthCount) / currMonthCount) * 100).toFixed(1);
 
 	return (
         <div>
