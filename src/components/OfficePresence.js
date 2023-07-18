@@ -18,7 +18,7 @@ function OfficePresence({ displayMonth }) {
 	// Set the index of previous month back 1
 	const prevMonthIndex = currMonthIndex - 1;
 
-	// Empty variable to pass the previous month's count number into
+	// Empty variable to pass in previous month's count number
 	let prevMonthCount = 0;
 
 	// Get the previous month's count number if the previous month index is equal or greater than 0
