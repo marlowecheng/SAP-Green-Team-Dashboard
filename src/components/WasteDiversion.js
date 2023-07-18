@@ -1,7 +1,7 @@
 import { Card, BarList } from "@tremor/react";
 
 import data from '../data/monthlyData2023.json';
-
+          
 function WasteDiversion({displayMonth}) {
 
 	// Filters the array based on the month passed in via displayMonth
@@ -13,6 +13,9 @@ function WasteDiversion({displayMonth}) {
 	// Convert diverted data into a number and times by 100
 	const divertedData = Number(monthData.diverted) * 100;
 
+    // Percentage of garbage from the total waste
+	const landfillData = parseInt(Number(monthData.total) / Number(monthData.garbage));
+
 	// Make data Tremor-friendly
 	const recycling = [
         {
@@ -21,7 +24,7 @@ function WasteDiversion({displayMonth}) {
         },
         {
             name: "Landfill",
-            value: "36",
+            value: landfillData,
         },
     ];
 	
