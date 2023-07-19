@@ -139,12 +139,6 @@ function InfoCards({ displayMonth }) {
                                         </p>
                                     </div>
                                 )}
-                                {/* <div className="w-44 h-14 rounded-full bg-pillBgGreen text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
-                                    <ArrowUpIcon className="text-white stroke-[4px] w-6 h-6" />
-                                    <p className="text-white font-bold text-2xl">
-                                        50.1%
-                                    </p>
-                                </div> */}
                                 <Text className="text-xs text-white mt-2 pl-4">
                                     *Total Weight: 250 tons
                                 </Text>
