@@ -1,5 +1,5 @@
 import { Card } from "@tremor/react";
-import { ArrowUpIcon, ArrowDownIcon } from "@heroicons/react/24/outline";
+import { ArrowUpIcon, ArrowDownIcon, MinusIcon } from "@heroicons/react/24/outline";
 
 import heroBackground from "../assets/SAPVECTORLOGO-COLOR.svg";
 import paperBag from "../assets/paper-bag.svg";
@@ -24,15 +24,24 @@ import glassBottle from "../assets/glass-water-bottle.svg";
 import greensodaCan from "../assets/tall-green-soda-can.svg";
 
 import data from '../data/monthlyData2023.json';
+import { calcCascadeData, calcEcoData, calcLandfillData, calcRefundablesData } from '../utilities/calcDifferencePercent';
 
 function Banner({ displayMonth }) {
 
+    // Get the array set of the month that is passed in via prop
 	const monthData = data.YEAR2023.find((item) => item.month === displayMonth);
 
-	const cascadesRecovery = monthData.rigidsRefundableAndNon + monthData.confidentialPaper;
+    // Get the index of the current month's array
+	const currMonthIndex = data.YEAR2023.findIndex((item) => item.month === displayMonth);
 
-	console.log(cascadesRecovery);
+    // Get the index of the previous month's array
+	const prevMonthIndex = currMonthIndex - 1;
 
+    // Calling calculation functions from calcDifferencePercent.js with the above consts passed into the functions
+	const compareCascadeData = calcCascadeData(monthData, data.YEAR2023[prevMonthIndex]);
+	const compareEcoData = calcEcoData(monthData, data.YEAR2023[prevMonthIndex]);
+	const compareLandfillData = calcLandfillData(monthData, data.YEAR2023[prevMonthIndex]);
+	const compareRefundablesData = calcRefundablesData(monthData, data.YEAR2023[prevMonthIndex]);
 
     return (
         <div className="bg-bgmain py-4 flex justify-around border-b-[60px] border-textmain">
@@ -44,7 +53,7 @@ function Banner({ displayMonth }) {
                     />
                 </div>
             </div>
-
+			
             <div classname="flex flex-row">
                 <div className="flex flex-row my-4 gap-x-6">
                     {/* Hero Card Cascade Recovery */}
@@ -79,12 +88,30 @@ function Banner({ displayMonth }) {
                                 title="Broken Glass"
                             />
                         </div>
-                        <div className="w-32 h-12 rounded-full bg-pillBgGreen bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+						{compareCascadeData > 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgGreen bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
                             <ArrowUpIcon className="text-green-900 stroke-[3px] w-6 h-6" />
                             <p className="font-bold text-lg text-green-900">
-                                45%
+								{Math.abs(compareCascadeData)}%
                             </p>
                         </div>
+						)}
+						{compareCascadeData < 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgRed bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+                            <ArrowDownIcon className="text-red-900 stroke-[3px] w-6 h-6" />
+                            <p className="font-bold text-lg text-red-900">
+                                {Math.abs(compareCascadeData)}%
+                            </p>
+                        </div>
+						)}
+						{compareCascadeData == 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgGrey bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+                            <MinusIcon className="pillTextGrey stroke-[3px] w-6 h-6" />
+                            <p className="font-bold text-lg pillTextGrey">
+                                {Math.abs(compareCascadeData)}%
+                            </p>
+                        </div>
+						)}
                     </Card>
 
                     {/* Hero Card Eco Action */}
@@ -117,12 +144,30 @@ function Banner({ displayMonth }) {
                                 title="Apple Core"
                             />
                         </div>
-                        <div className="w-32 h-12 rounded-full bg-pillBgGreen bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+						{compareEcoData > 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgGreen bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
                             <ArrowUpIcon className="text-green-900 stroke-[3px] w-6 h-6" />
                             <p className="font-bold text-lg text-green-900">
-                                45%
+								{Math.abs(compareEcoData)}%
                             </p>
                         </div>
+						)}
+						{compareEcoData < 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgRed bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+                            <ArrowDownIcon className="text-red-900 stroke-[3px] w-6 h-6" />
+                            <p className="font-bold text-lg text-red-900">
+                                {Math.abs(compareEcoData)}%
+                            </p>
+                        </div>
+						)}
+						{compareEcoData == 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgGrey bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+                            <MinusIcon className="pillTextGrey stroke-[3px] w-6 h-6" />
+                            <p className="font-bold text-lg pillTextGrey">
+                                {Math.abs(compareEcoData)}%
+                            </p>
+                        </div>
+						)}
                     </Card>
                 </div>
 
@@ -159,12 +204,30 @@ function Banner({ displayMonth }) {
                                 title="Medical Mask"
                             />
                         </div>
-                        <div className="w-32 h-12 rounded-full bg-pillBgRed bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
-                            <ArrowDownIcon className="text-red-900 stroke-[3px] w-6 h-6" />
-                            <p className="font-bold text-lg text-red-900">
-                                45%
+                        {compareLandfillData > 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgGreen bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+                            <ArrowUpIcon className="text-green-900 stroke-[3px] w-6 h-6" />
+                            <p className="font-bold text-lg text-green-900">
+								{Math.abs(compareLandfillData)}%
                             </p>
                         </div>
+						)}
+						{compareLandfillData < 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgRed bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+                            <ArrowDownIcon className="text-red-900 stroke-[3px] w-6 h-6" />
+                            <p className="font-bold text-lg text-red-900">
+                                {Math.abs(compareLandfillData)}%
+                            </p>
+                        </div>
+						)}
+						{compareLandfillData == 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgGrey bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+                            <MinusIcon className="pillTextGrey stroke-[3px] w-6 h-6" />
+                            <p className="font-bold text-lg pillTextGrey">
+                                {Math.abs(compareLandfillData)}%
+                            </p>
+                        </div>
+						)}
                     </Card>
 
                     {/* Hero Card refundables */}
@@ -197,12 +260,30 @@ function Banner({ displayMonth }) {
                                 title="Green Soda Can"
                             />
                         </div>
-                        <div className="w-32 h-12 rounded-full bg-pillBgGreen bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+                        {compareRefundablesData > 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgGreen bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
                             <ArrowUpIcon className="text-green-900 stroke-[3px] w-6 h-6" />
                             <p className="font-bold text-lg text-green-900">
-                                45%
+								{Math.abs(compareRefundablesData)}%
                             </p>
                         </div>
+						)}
+						{compareRefundablesData < 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgRed bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+                            <ArrowDownIcon className="text-red-900 stroke-[3px] w-6 h-6" />
+                            <p className="font-bold text-lg text-red-900">
+                                {Math.abs(compareRefundablesData)}%
+                            </p>
+                        </div>
+						)}
+						{compareRefundablesData == 0 && (
+							<div className="w-32 h-12 rounded-full bg-pillBgGrey bg-opacity-[40%] text-center flex flex-row items-center justify-center gap-x-2 drop-shadow-2xl">
+                            <MinusIcon className="pillTextGrey stroke-[3px] w-6 h-6" />
+                            <p className="font-bold text-lg pillTextGrey">
+                                {Math.abs(compareRefundablesData)}%
+                            </p>
+                        </div>
+						)}
                     </Card>
                 </div>
             </div>
