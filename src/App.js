@@ -40,9 +40,6 @@ function App() {
             </div>
 
             {/* WHATS NEW SECTION */}
-            {/* <h1
-        className='text-xl'
-      >What's new, SAP?</h1> */}
             <div>
                 <NewsSection />
             </div>
