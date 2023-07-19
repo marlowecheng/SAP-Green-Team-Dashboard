@@ -13,9 +13,14 @@ The SAP Green Team Waste Dashboard is a data visualization tool designed to prov
 - [Material Tailwind UI](https://www.material-tailwind.com/docs/react/installation)
 - [Hero Icons](https://heroicons.com/)
 
-# Getting Started with Create React App
+# Installation and Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### `npm install`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm start`
 
@@ -25,10 +30,63 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm install`
+# Understanding the Code
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Displayed Month
+
+To change the month displayed on first load, find `const updatedMonth = "may"` in App.js. Replace the string with the desired month in lowercase. This line can be quickly found by searching `!NOTE` in your IDE.
+
+```
+App.js
+
+const updatedMonth = "may";
+```
+
+`updatedMonth` is used throughout the entire dashboard to pass the desired month to be displayed. Once the string is replaced, the dashboard data should update automatically.
+
+#### Future Plans - Automatically Update the Month
+
+Once the JSON is consistently kept up to date, the following can be used to replace the string as a way to automatically switch to the latest month.
+
+```
+    const date = new Date();
+    date.setMonth(date.getMonth() - 1);
+    const updatedMonth = date.toLocaleString("default", { month: "long" }).toLowerCase();
+```
+
+Since the data is typically a month behind the current month, this would automatically display data from the previous month. After automating the month display string, only the JSON file would need to be manually updated.
+
+
+### JSON
+
+Monthly Waste Data is obtained from SAP directly in the form of a spreadsheet, and it is typically updated once a month.
+
+All keys in `monthlyData2023.json` corresponds to the spreadsheet rows and names. The following array template has been completed for all months, and only requires updating the value.
+
+```
+{
+            "id": 9,
+            "month": "september",
+            "rigidsRefundableAndNon": 0,
+            "mixedPaperFiber": 0,
+            "confidentialPaper": 0,
+            "compost": 0,
+            "coffeeGrounds": 0,
+            "eWasteDesktop": 0,
+            "eWasteDataCentre": 0,
+            "itDonations": 0,
+            "furnitureAndMisc": 0,
+            "pensHighlighter": 0,
+            "batteriesCD": 0,
+            "metalWoodPaint": 0,
+            "tubesBulbs": 0,
+            "tonerCartridges": 0,
+            "garbage": 0,
+            "total": 0,
+            "diverted": 0
+        },
+```
+
 
 # License
 
