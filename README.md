@@ -65,26 +65,26 @@ All keys in `monthlyData2023.json` corresponds to the spreadsheet rows and names
 
 ```
 {
-            "id": 9,
-            "month": "september",
-            "rigidsRefundableAndNon": 0,
-            "mixedPaperFiber": 0,
-            "confidentialPaper": 0,
-            "compost": 0,
-            "coffeeGrounds": 0,
-            "eWasteDesktop": 0,
-            "eWasteDataCentre": 0,
-            "itDonations": 0,
-            "furnitureAndMisc": 0,
-            "pensHighlighter": 0,
-            "batteriesCD": 0,
-            "metalWoodPaint": 0,
-            "tubesBulbs": 0,
-            "tonerCartridges": 0,
-            "garbage": 0,
-            "total": 0,
-            "diverted": 0
-        },
+    "id": 9,
+    "month": "september",
+    "rigidsRefundableAndNon": 0,
+    "mixedPaperFiber": 0,
+    "confidentialPaper": 0,
+    "compost": 0,
+    "coffeeGrounds": 0,
+    "eWasteDesktop": 0,
+    "eWasteDataCentre": 0,
+    "itDonations": 0,
+    "furnitureAndMisc": 0,
+    "pensHighlighter": 0,
+    "batteriesCD": 0,
+    "metalWoodPaint": 0,
+    "tubesBulbs": 0,
+    "tonerCartridges": 0,
+    "garbage": 0,
+    "total": 0,
+    "diverted": 0
+},
 ```
 
 
