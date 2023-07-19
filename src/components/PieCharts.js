@@ -95,9 +95,9 @@ function PieCharts({ displayMonth }) {
     }
 
     return (
-        <div>
+        <div className="mx-40">
             <div className="text-center">
-                <div className="flex justify-center items-center bg-textmain p-2">
+                <div className="flex justify-center items-center bg-textmain p-2 rounded-t-lg">
                     <div>
                         <ChevronLeftIcon
                             className="w-10 h-10 text-white"
@@ -192,7 +192,7 @@ function PieCharts({ displayMonth }) {
             </div>
 
             {/* Organics Vs Coffee Grounds Card */}
-            <div className="bg-bgmain p-2 flex items-center justify-center pb-12">
+            <div className="bg-bgmain p-2 flex items-center justify-center pb-12 rounded-b-lg">
                 <div className="">
                     <Card className="flex gap-x-10 justify-center items-center">
                         <div>
