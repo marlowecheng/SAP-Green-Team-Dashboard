@@ -49,7 +49,8 @@ function InfoCards({ displayMonth }) {
         data.YEAR2023[prevMonthIndex]
     );
 
-    const currMonth = displayMonth.charAt(0).toUpperCase() + displayMonth.slice(1);
+    // Displays the current month in all caps above the % pill
+    const currMonth = displayMonth.toUpperCase();
 
     return (
         <div>
@@ -80,7 +81,7 @@ function InfoCards({ displayMonth }) {
                     </IconButton>
                 )}
             >
-                {/* Card 1 */}
+                {/* Cascade Recovery Card */}
                 <Card className="max-w-3xl mx-auto bg-cascadeBg mt-12 mb-12">
                     <div>
                         <Flex>
@@ -111,7 +112,7 @@ function InfoCards({ displayMonth }) {
                                     height={180}
                                     src={cascadeImg}
                                 />
-                                <Text className="text-lg text-white font-bold">
+                                <Text className="text-lg text-white font-bold pl-4">
                                     {currMonth}
                                 </Text>
                                 {compareCascadeData > 0 && (
@@ -144,7 +145,7 @@ function InfoCards({ displayMonth }) {
                                         50.1%
                                     </p>
                                 </div> */}
-                                <Text className="text-xs text-white mt-2">
+                                <Text className="text-xs text-white mt-2 pl-4">
                                     *Total Weight: 250 tons
                                 </Text>
                             </div>
@@ -152,7 +153,7 @@ function InfoCards({ displayMonth }) {
                     </div>
                 </Card>
 
-                {/* Card 2 */}
+                {/* EcoAction Card */}
                 <Card className="max-w-3xl mx-auto bg-ecoActionBg mt-12 mb-12">
                     <div>
                         <Flex>
@@ -187,16 +188,34 @@ function InfoCards({ displayMonth }) {
                                     height={180}
                                     src={ecoServiceCard}
                                 />
-                                <Text className="text-lg text-white font-bold">
+                                <Text className="text-lg text-white font-bold pl-4">
                                 {currMonth}
                                 </Text>
-                                <div className="w-44 h-14 rounded-full bg-pillBgGreen text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
+                                {compareEcoData > 0 && (
+                                    <div className="w-44 h-14 rounded-full bg-pillBgGreen text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
                                     <ArrowUpIcon className="text-white stroke-[4px] w-6 h-6" />
                                     <p className="text-white font-bold text-2xl">
-                                        50.1%
+                                    {Math.abs(compareEcoData)}%
                                     </p>
-                                </div>
-                                <Text className="text-xs text-white mt-2">
+                                    </div>
+                                )}
+                                {compareEcoData < 0 && (
+                                    <div className="w-44 h-14 rounded-full bg-pillBgRed text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
+                                        <ArrowDownIcon className="text-white stroke-[4px] w-6 h-6" />
+                                        <p className="text-white font-bold text-2xl">
+                                            {Math.abs(compareEcoData)}%
+                                        </p>
+                                    </div>
+                                )}
+                                {compareEcoData == 0 && (
+                                    <div className="w-44 h-14 rounded-full bg-pillBgGrey text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
+                                        <MinusIcon className="text-white stroke-[4px] w-6 h-6" />
+                                        <p className="font-bold text-2xl text-white">
+                                            {Math.abs(compareEcoData)}%
+                                        </p>
+                                    </div>
+                                )}
+                                <Text className="text-xs text-white mt-2 pl-4">
                                     *Total Weight: 250 tons
                                 </Text>
                             </div>
@@ -204,7 +223,7 @@ function InfoCards({ displayMonth }) {
                     </div>
                 </Card>
 
-                {/* Card 3 */}
+                {/* Waste Control Services Card */}
                 <Card className="max-w-3xl mx-auto bg-wasteBg mt-12 mb-12">
                     <div>
                         <Flex>
@@ -234,16 +253,34 @@ function InfoCards({ displayMonth }) {
                                     height={180}
                                     src={wasteServiceCard}
                                 />
-                                <Text className="text-lg text-white font-bold">
+                                <Text className="text-lg text-white font-bold pl-4">
                                 {currMonth}
                                 </Text>
-                                <div className="w-44 h-14 rounded-full bg-pillBgGreen text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
+                                {compareLandfillData > 0 && (
+                                    <div className="w-44 h-14 rounded-full bg-pillBgGreen text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
                                     <ArrowUpIcon className="text-white stroke-[4px] w-6 h-6" />
                                     <p className="text-white font-bold text-2xl">
-                                        50.1%
+                                    {Math.abs(compareLandfillData)}%
                                     </p>
-                                </div>
-                                <Text className="text-xs text-white mt-2">
+                                    </div>
+                                )}
+                                {compareLandfillData < 0 && (
+                                    <div className="w-44 h-14 rounded-full bg-pillBgRed text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
+                                        <ArrowDownIcon className="text-white stroke-[4px] w-6 h-6" />
+                                        <p className="text-white font-bold text-2xl">
+                                            {Math.abs(compareLandfillData)}%
+                                        </p>
+                                    </div>
+                                )}
+                                {compareLandfillData == 0 && (
+                                    <div className="w-44 h-14 rounded-full bg-pillBgGrey text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
+                                        <MinusIcon className="text-white stroke-[4px] w-6 h-6" />
+                                        <p className="font-bold text-2xl text-white">
+                                            {Math.abs(compareLandfillData)}%
+                                        </p>
+                                    </div>
+                                )}
+                                <Text className="text-xs text-white mt-2 pl-4">
                                     *Total Weight: 250 tons
                                 </Text>
                             </div>
@@ -251,7 +288,7 @@ function InfoCards({ displayMonth }) {
                     </div>
                 </Card>
 
-                {/* Card 4 */}
+                {/* Refundables Card */}
                 <Card className="max-w-3xl mx-auto bg-refundableBg mt-12 mb-12">
                     <div>
                         <Flex>
@@ -283,16 +320,34 @@ function InfoCards({ displayMonth }) {
                                     height={180}
                                     src={refundServiceCard}
                                 />
-                                <Text className="text-lg text-white font-bold">
+                                <Text className="text-lg text-white font-bold pl-4">
                                 {currMonth}
                                 </Text>
-                                <div className="w-44 h-14 rounded-full bg-pillBgGreen text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
+                                {compareRefundablesData > 0 && (
+                                    <div className="w-44 h-14 rounded-full bg-pillBgGreen text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
                                     <ArrowUpIcon className="text-white stroke-[4px] w-6 h-6" />
                                     <p className="text-white font-bold text-2xl">
-                                        50.1%
+                                    {Math.abs(compareRefundablesData)}%
                                     </p>
-                                </div>
-                                <Text className="text-xs text-white mt-2">
+                                    </div>
+                                )}
+                                {compareRefundablesData < 0 && (
+                                    <div className="w-44 h-14 rounded-full bg-pillBgRed text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
+                                        <ArrowDownIcon className="text-white stroke-[4px] w-6 h-6" />
+                                        <p className="text-white font-bold text-2xl">
+                                            {Math.abs(compareRefundablesData)}%
+                                        </p>
+                                    </div>
+                                )}
+                                {compareRefundablesData == 0 && (
+                                    <div className="w-44 h-14 rounded-full bg-pillBgGrey text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
+                                        <MinusIcon className="text-white stroke-[4px] w-6 h-6" />
+                                        <p className="font-bold text-2xl text-white">
+                                            {Math.abs(compareRefundablesData)}%
+                                        </p>
+                                    </div>
+                                )}
+                                <Text className="text-xs text-white mt-2 pl-4">
                                     *Total Weight: 250 tons
                                 </Text>
                             </div>
