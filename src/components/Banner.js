@@ -27,10 +27,17 @@ import data from '../data/monthlyData2023.json';
 import { calcCascadeData, calcEcoData, calcLandfillData, calcRefundablesData } from '../utilities/calcDifferencePercent';
 
 function Banner({ displayMonth }) {
+
+    // Get the array set of the month that is passed in via prop
 	const monthData = data.YEAR2023.find((item) => item.month === displayMonth);
+
+    // Get the index of the current month's array
 	const currMonthIndex = data.YEAR2023.findIndex((item) => item.month === displayMonth);
+
+    // Get the index of the previous month's array
 	const prevMonthIndex = currMonthIndex - 1;
 
+    // Calling calculation functions from calcDifferencePercent.js with the above consts passed into the functions
 	const compareCascadeData = calcCascadeData(monthData, data.YEAR2023[prevMonthIndex]);
 	const compareEcoData = calcEcoData(monthData, data.YEAR2023[prevMonthIndex]);
 	const compareLandfillData = calcLandfillData(monthData, data.YEAR2023[prevMonthIndex]);
@@ -46,7 +53,6 @@ function Banner({ displayMonth }) {
                     />
                 </div>
             </div>
-			
 			
             <div classname="flex flex-row">
                 <div className="flex flex-row my-4 gap-x-6">
