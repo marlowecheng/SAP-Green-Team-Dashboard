@@ -12,30 +12,30 @@ import NewsSection from "./components/NewsSection";
 
 function App() {
     
-    // !NOTE: To change the month displayed on first load, replace the "" with desired month
-    let currMonth = "may";
+    // !NOTE: To change the month displayed on first load, replace the "" with desired month in all lowercase letters
+    const updatedMonth = "may";
 
     return (
         <div>
             <Header />
-            <Banner displayMonth={currMonth} />
+            <Banner displayMonth={updatedMonth} />
 
             <div className="flex flex-row items-center justify-evenly m-10">
                 {/* Office Presence Card */}
-                <OfficePresence displayMonth={currMonth} />
+                <OfficePresence displayMonth={updatedMonth} />
 
                 {/* Waste Diversion Section */}
-                <WasteDiversion displayMonth={currMonth} />
+                <WasteDiversion displayMonth={updatedMonth} />
             </div>
 
             {/* Middle Carousel Section */}
             <div>
-                <InfoCards displayMonth={currMonth} />
+                <InfoCards displayMonth={updatedMonth} />
             </div>
 
             {/* MONTHLY CHANGE SECTION */}
             <div>
-                <PieCharts displayMonth={currMonth} />
+                <PieCharts displayMonth={updatedMonth} />
                 {/* <MonthlyChange /> */}
             </div>
 
