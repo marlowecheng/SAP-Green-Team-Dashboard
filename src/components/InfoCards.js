@@ -3,7 +3,7 @@ import { Carousel, IconButton } from "@material-tailwind/react";
 import {
     ChevronLeftIcon,
     ChevronRightIcon,
-    ArrowUpIcon,
+    ArrowUpIcon, ArrowDownIcon, MinusIcon
 } from "@heroicons/react/24/outline";
 
 import cascadeImg from "../assets/cascade-recovery.svg";
@@ -11,7 +11,46 @@ import ecoServiceCard from "../assets/eco-action.svg";
 import wasteServiceCard from "../assets/wastemanagement.svg";
 import refundServiceCard from "../assets/refundables.svg";
 
-function InfoCards() {
+import data from "../data/monthlyData2023.json";
+import {
+    calcCascadeData,
+    calcEcoData,
+    calcLandfillData,
+    calcRefundablesData,
+} from "../utilities/calcDifferencePercent";
+
+function InfoCards({ displayMonth }) {
+    // Get the array set of the month that is passed in via prop
+    const monthData = data.YEAR2023.find((item) => item.month === displayMonth);
+
+    // Get the index of the current month's array
+    const currMonthIndex = data.YEAR2023.findIndex(
+        (item) => item.month === displayMonth
+    );
+
+    // Get the index of the previous month's array
+    const prevMonthIndex = currMonthIndex - 1;
+
+    // Calling calculation functions from calcDifferencePercent.js with the above consts passed into the functions
+    const compareCascadeData = calcCascadeData(
+        monthData,
+        data.YEAR2023[prevMonthIndex]
+    );
+    const compareEcoData = calcEcoData(
+        monthData,
+        data.YEAR2023[prevMonthIndex]
+    );
+    const compareLandfillData = calcLandfillData(
+        monthData,
+        data.YEAR2023[prevMonthIndex]
+    );
+    const compareRefundablesData = calcRefundablesData(
+        monthData,
+        data.YEAR2023[prevMonthIndex]
+    );
+
+    const currMonth = displayMonth.charAt(0).toUpperCase() + displayMonth.slice(1);
+
     return (
         <div>
             <Carousel
@@ -73,14 +112,38 @@ function InfoCards() {
                                     src={cascadeImg}
                                 />
                                 <Text className="text-lg text-white font-bold">
-                                    April
+                                    {currMonth}
                                 </Text>
-                                <div className="w-44 h-14 rounded-full bg-pillBgGreen text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
+                                {compareCascadeData > 0 && (
+                                    <div className="w-44 h-14 rounded-full bg-pillBgGreen text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
+                                    <ArrowUpIcon className="text-white stroke-[4px] w-6 h-6" />
+                                    <p className="text-white font-bold text-2xl">
+                                    {Math.abs(compareCascadeData)}%
+                                    </p>
+                                    </div>
+                                )}
+                                {compareCascadeData < 0 && (
+                                    <div className="w-44 h-14 rounded-full bg-pillBgRed text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
+                                        <ArrowDownIcon className="text-white stroke-[4px] w-6 h-6" />
+                                        <p className="text-white font-bold text-2xl">
+                                            {Math.abs(compareCascadeData)}%
+                                        </p>
+                                    </div>
+                                )}
+                                {compareCascadeData == 0 && (
+                                    <div className="w-44 h-14 rounded-full bg-pillBgGrey text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
+                                        <MinusIcon className="text-white stroke-[4px] w-6 h-6" />
+                                        <p className="font-bold text-2xl text-white">
+                                            {Math.abs(compareCascadeData)}%
+                                        </p>
+                                    </div>
+                                )}
+                                {/* <div className="w-44 h-14 rounded-full bg-pillBgGreen text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
                                     <ArrowUpIcon className="text-white stroke-[4px] w-6 h-6" />
                                     <p className="text-white font-bold text-2xl">
                                         50.1%
                                     </p>
-                                </div>
+                                </div> */}
                                 <Text className="text-xs text-white mt-2">
                                     *Total Weight: 250 tons
                                 </Text>
@@ -125,7 +188,7 @@ function InfoCards() {
                                     src={ecoServiceCard}
                                 />
                                 <Text className="text-lg text-white font-bold">
-                                    April
+                                {currMonth}
                                 </Text>
                                 <div className="w-44 h-14 rounded-full bg-pillBgGreen text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
                                     <ArrowUpIcon className="text-white stroke-[4px] w-6 h-6" />
@@ -172,7 +235,7 @@ function InfoCards() {
                                     src={wasteServiceCard}
                                 />
                                 <Text className="text-lg text-white font-bold">
-                                    April
+                                {currMonth}
                                 </Text>
                                 <div className="w-44 h-14 rounded-full bg-pillBgGreen text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
                                     <ArrowUpIcon className="text-white stroke-[4px] w-6 h-6" />
@@ -221,7 +284,7 @@ function InfoCards() {
                                     src={refundServiceCard}
                                 />
                                 <Text className="text-lg text-white font-bold">
-                                    April
+                                {currMonth}
                                 </Text>
                                 <div className="w-44 h-14 rounded-full bg-pillBgGreen text-center flex flex-row items-center justify-evenly drop-shadow-2xl">
                                     <ArrowUpIcon className="text-white stroke-[4px] w-6 h-6" />
