@@ -95,7 +95,7 @@ function PieCharts({ displayMonth }) {
     }
 
     return (
-        <div className="mx-40">
+        <div className="mx-40 my-14">
             <div className="text-center">
                 <div className="flex justify-center items-center bg-textmain p-2 rounded-t-lg">
                     <div>

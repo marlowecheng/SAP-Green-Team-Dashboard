@@ -9,6 +9,7 @@ import PieCharts from "./components/PieCharts";
 import WasteDiversion from "./components/WasteDiversion";
 import InfoCards from "./components/InfoCards";
 import NewsSection from "./components/NewsSection";
+import WasteChart from "./components/AreaChart";
 
 function App() {
     
@@ -27,6 +28,11 @@ function App() {
                 {/* Waste Diversion Section */}
                 <WasteDiversion displayMonth={updatedMonth} />
             </div>
+            
+            {/* Area Chart Section */}
+            <div>
+                <WasteChart />
+            </div>
 
             {/* Middle Carousel Section */}
             <div>
@@ -36,7 +42,6 @@ function App() {
             {/* MONTHLY CHANGE SECTION */}
             <div>
                 <PieCharts displayMonth={updatedMonth} />
-                {/* <MonthlyChange /> */}
             </div>
 
             {/* WHATS NEW SECTION */}
