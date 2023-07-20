@@ -10,13 +10,15 @@ function WasteChart() {
     // Gets the array of month data and iterates through each array with the 'month' key
     data.YEAR2023.forEach((monthData) => {
 
-        // Retrieves data from the JSON and puts it in its perspective variable
+        // Retrieves data from the JSON and puts it in its respective variable
         const date = monthData.month;
         const ecoData = monthData.compost + monthData.coffeeGrounds;
         const wasteData = monthData.garbage;
         const cascadeData = monthData.rigidsRefundableAndNon + monthData.mixedPaperFiber + monthData.confidentialPaper;
         const refundablesData = monthData.rigidsRefundableAndNon;
 
+
+        // Creates an iteration of the array below for each month in chartData
         chartData.push({
             date: date.charAt(0).toUpperCase() + date.slice(1),
             "Eco Action": ecoData,
