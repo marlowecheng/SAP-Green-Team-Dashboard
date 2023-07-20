@@ -4,7 +4,7 @@ import data from "../data/monthlyData2023.json";
 
 function WasteChart() {
 
-    // Empty array that the new data will populate later
+    // Empty array that the forEach will populate later
     const chartData = [];
 
     // Gets the array of month data and iterates through each array with the 'month' key
