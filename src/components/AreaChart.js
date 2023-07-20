@@ -30,7 +30,7 @@ function WasteChart() {
     });
 
     return (
-        <Card className="flex justify-center flex-col items-center bg-bgmain p-8">
+        <Card className="flex justify-center flex-col items-center bg-bgmain p-8 my-14">
             <div className="mb-4">
                 <h1 className="text-3xl text-textmain font-bold">SAP 2023 Total Waste Overview (KG)</h1>
             </div>
