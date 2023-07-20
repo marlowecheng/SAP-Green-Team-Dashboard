@@ -9,15 +9,17 @@ import anishaCard from '../assets/Anisha_CardPhoto.jpg';
 
 function NewsSection() {
     return (
-    <Carousel 
+    <div>
+        <h1 className='text-textmain text-[40px] font-bold text-center mt-12 mb-8'>What's new, SAP?</h1>
+        <Carousel 
         className='rounded-lg' 
         transition={{ duration: 1.5 }}
         autoplay={true}
         prevArrow={false}
         nextArrow={false}
         loop={true}
-        >
-            <Card className="max-w-3xl mx-auto bg-bgmain mt-12 mb-12">
+        > 
+            <Card className="max-w-3xl mx-auto bg-bgmain mb-12">
             <div>
                 <Flex>
                 <div className='flex flex-row m-8 gap-x-20'>
@@ -36,7 +38,7 @@ function NewsSection() {
             </div>
             </Card>
 
-            <Card className="max-w-3xl mx-auto bg-bgmain mt-12 mb-12">
+            <Card className="max-w-3xl mx-auto bg-bgmain mb-12">
             <div>
                 <Flex>
                 <div className='flex flex-row gap-x-32'>
@@ -56,7 +58,7 @@ function NewsSection() {
             </Card>
 
 
-            <Card className="max-w-3xl mx-auto bg-bgmain mt-12 mb-12">
+            <Card className="max-w-3xl mx-auto bg-bgmain mb-12">
             <div>
                 <Flex>
                 <div className='p-8'>
@@ -77,7 +79,7 @@ function NewsSection() {
             </Card>
 
 
-            <Card className="max-w-3xl mx-auto bg-bgmain mt-12 mb-12">
+            <Card className="max-w-3xl mx-auto bg-bgmain mb-12">
             <div>
                 <img 
                 className='mb-5'
@@ -87,6 +89,7 @@ function NewsSection() {
             </div>
             </Card>
         </Carousel>
+    </div>
     );
 }
 

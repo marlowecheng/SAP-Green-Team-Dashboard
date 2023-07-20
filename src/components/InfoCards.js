@@ -55,7 +55,6 @@ function InfoCards({ displayMonth }) {
     return (
         <div>
             <Carousel
-                className=""
                 prevArrow={({ handlePrev }) => (
                     <IconButton
                         size="lg"
