@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/SAP-Green-Team-Dashboard/static/css/main.3fd5bb6f.css",
-    "main.js": "/SAP-Green-Team-Dashboard/static/js/main.982fea4c.js",
+    "main.css": "/SAP-Green-Team-Dashboard/static/css/main.cfa5cf22.css",
+    "main.js": "/SAP-Green-Team-Dashboard/static/js/main.4649c64b.js",
     "static/js/787.e7790cf1.chunk.js": "/SAP-Green-Team-Dashboard/static/js/787.e7790cf1.chunk.js",
     "static/media/NapkinHeroV2.png": "/SAP-Green-Team-Dashboard/static/media/NapkinHeroV2.f0104ac3def179df256b.png",
     "static/media/SAPGREENTEAMCARDCOLLECTIONV2.png": "/SAP-Green-Team-Dashboard/static/media/SAPGREENTEAMCARDCOLLECTIONV2.57d1a010b2a2fb669d63.png",
@@ -36,12 +36,12 @@
     "index.html": "/SAP-Green-Team-Dashboard/index.html",
     "static/media/bones.svg": "/SAP-Green-Team-Dashboard/static/media/bones.4ac3ef6150d2b5e3509afc0e69357f37.svg",
     "static/media/paper-bag.svg": "/SAP-Green-Team-Dashboard/static/media/paper-bag.bfff223286a056c95271945acb18d311.svg",
-    "main.3fd5bb6f.css.map": "/SAP-Green-Team-Dashboard/static/css/main.3fd5bb6f.css.map",
-    "main.982fea4c.js.map": "/SAP-Green-Team-Dashboard/static/js/main.982fea4c.js.map",
+    "main.cfa5cf22.css.map": "/SAP-Green-Team-Dashboard/static/css/main.cfa5cf22.css.map",
+    "main.4649c64b.js.map": "/SAP-Green-Team-Dashboard/static/js/main.4649c64b.js.map",
     "787.e7790cf1.chunk.js.map": "/SAP-Green-Team-Dashboard/static/js/787.e7790cf1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3fd5bb6f.css",
-    "static/js/main.982fea4c.js"
+    "static/css/main.cfa5cf22.css",
+    "static/js/main.4649c64b.js"
   ]
 }
