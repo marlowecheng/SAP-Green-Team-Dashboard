@@ -44,12 +44,12 @@ function Banner({ displayMonth }) {
 	const compareRefundablesData = calcRefundablesData(monthData, data.YEAR2023[prevMonthIndex]);
 
     return (
-        <div className="bg-bgmain py-4 flex justify-around border-b-[60px] border-textmain">
+        <div className="bg-bgmain py-4 flex justify-around border-b-[60px] border-textmain z-5">
             <div className="flex flex-col">
                 <div className="absolute top-4 right-0 left-[-5px] bottom-0">
                     <img
                         src={heroBackground}
-                        className="w-[550px] h-[550px] z-0 opacity-10"
+                        className="w-[550px] h-[550px] -z-5 opacity-10"
                     />
                 </div>
             </div>
