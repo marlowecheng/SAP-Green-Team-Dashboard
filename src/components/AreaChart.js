@@ -26,7 +26,6 @@ function WasteChart() {
             "Cascade Recovery": cascadeData,
             "Refundables": refundablesData,
         });
-
     });
 
     return (
