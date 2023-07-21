@@ -14,15 +14,39 @@
         },
         {
             "month": "april",
-            "count": 3723
+            "count": 60000
         },
         {
             "month": "may",
-            "count": 5773
+            "count": 50000
         },
         {
             "month": "june",
-            "count": 4616
+            "count": 70000
+        },
+        {
+            "month": "july",
+            "count": 0
+        },
+        {
+            "month": "august",
+            "count": 0
+        },
+        {
+            "month": "september",
+            "count": 0
+        },
+        {
+            "month": "october",
+            "count": 0
+        },
+        {
+            "month": "november",
+            "count": 0
+        },
+        {
+            "month": "december",
+            "count": 0
         }
     ]
 }
